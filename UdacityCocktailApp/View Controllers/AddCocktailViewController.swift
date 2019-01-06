@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AddCocktailViewController: UIViewController {
+class AddCocktailViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var cocktailName: UITextField!
     @IBOutlet weak var ingredient1: UITextField!
@@ -17,18 +17,21 @@ class AddCocktailViewController: UIViewController {
     @IBOutlet weak var ingredient3: UITextField!
     
     @IBOutlet weak var measurementsTextField: UITextView!
-    @IBOutlet weak var cocktailInformationTextField: UILabel!
+    @IBOutlet weak var cocktailInformationTextField: UITextView!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.cocktailName.delegate = self
+        self.ingredient1.delegate = self
+        self.ingredient2.delegate = self
+        self.ingredient3.delegate = self
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     @IBAction func saveCocktail(_ sender: Any) {
