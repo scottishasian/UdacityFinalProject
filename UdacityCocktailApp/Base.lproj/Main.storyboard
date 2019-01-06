@@ -270,14 +270,25 @@
                                     </textView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHo-vw-e9M">
+                                <rect key="frame" x="141" y="573" width="93" height="30"/>
+                                <state key="normal" title="Save Cocktail"/>
+                                <connections>
+                                    <action selector="saveCocktail:" destination="HGk-Jk-Zwb" eventType="touchUpInside" id="Smk-lZ-x4y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="JcJ-fT-C37" firstAttribute="trailing" secondItem="wfD-o4-sAG" secondAttribute="trailing" constant="52" id="9ft-zP-Bvt"/>
+                            <constraint firstItem="JcJ-fT-C37" firstAttribute="bottom" secondItem="qHo-vw-e9M" secondAttribute="bottom" constant="64" id="AJ6-54-Uuu"/>
                             <constraint firstItem="zm9-XC-dzF" firstAttribute="top" secondItem="wfD-o4-sAG" secondAttribute="bottom" constant="23" id="Ffp-Tt-Ehp"/>
+                            <constraint firstItem="qHo-vw-e9M" firstAttribute="leading" secondItem="JcJ-fT-C37" secondAttribute="leading" constant="141" id="K7P-zS-l33"/>
                             <constraint firstItem="Wbq-aB-Hmh" firstAttribute="leading" secondItem="JcJ-fT-C37" secondAttribute="leading" constant="51" id="O1k-2g-eLe"/>
                             <constraint firstItem="wfD-o4-sAG" firstAttribute="leading" secondItem="JcJ-fT-C37" secondAttribute="leading" constant="51" id="Y24-dL-0lg"/>
+                            <constraint firstItem="qHo-vw-e9M" firstAttribute="top" secondItem="Wbq-aB-Hmh" secondAttribute="bottom" constant="38" id="cpA-Ve-dN8"/>
                             <constraint firstItem="JcJ-fT-C37" firstAttribute="trailing" secondItem="Wbq-aB-Hmh" secondAttribute="trailing" constant="52" id="kcs-gA-XQr"/>
+                            <constraint firstItem="JcJ-fT-C37" firstAttribute="trailing" secondItem="qHo-vw-e9M" secondAttribute="trailing" constant="141" id="oL4-jJ-z1P"/>
                             <constraint firstItem="JcJ-fT-C37" firstAttribute="trailing" secondItem="zm9-XC-dzF" secondAttribute="trailing" constant="109" id="qJB-Vd-Zrl"/>
                             <constraint firstItem="zm9-XC-dzF" firstAttribute="leading" secondItem="JcJ-fT-C37" secondAttribute="leading" constant="109" id="qzF-zv-K02"/>
                             <constraint firstItem="wfD-o4-sAG" firstAttribute="top" secondItem="JcJ-fT-C37" secondAttribute="top" constant="26" id="s7J-EP-99h"/>
