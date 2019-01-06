@@ -23,6 +23,7 @@
 		2406F38B21E231F600857B58 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F38A21E231F600857B58 /* GCDBlackBox.swift */; };
 		2406F38E21E232AD00857B58 /* Login+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F38D21E232AD00857B58 /* Login+Extensions.swift */; };
 		2406F39021E2349F00857B58 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F38F21E2349F00857B58 /* SelectionViewController.swift */; };
+		2406F39321E23BF200857B58 /* CocktailDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2406F39121E23BF200857B58 /* CocktailDataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		2406F38A21E231F600857B58 /* GCDBlackBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 		2406F38D21E232AD00857B58 /* Login+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login+Extensions.swift"; sourceTree = "<group>"; };
 		2406F38F21E2349F00857B58 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
+		2406F39221E23BF200857B58 /* CocktailDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CocktailDataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				2406F36B21E22C7600857B58 /* LaunchScreen.storyboard */,
 				2406F36E21E22C7600857B58 /* Info.plist */,
 				2406F38A21E231F600857B58 /* GCDBlackBox.swift */,
+				2406F39121E23BF200857B58 /* CocktailDataModel.xcdatamodeld */,
 			);
 			path = UdacityCocktailApp;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				2406F38721E22E1000857B58 /* StudentDetails.swift in Sources */,
 				2406F39021E2349F00857B58 /* SelectionViewController.swift in Sources */,
 				2406F37921E22CD500857B58 /* Convenience.swift in Sources */,
+				2406F39321E23BF200857B58 /* CocktailDataModel.xcdatamodeld in Sources */,
 				2406F38B21E231F600857B58 /* GCDBlackBox.swift in Sources */,
 				2406F36321E22C7200857B58 /* AppDelegate.swift in Sources */,
 				2406F37E21E22D2E00857B58 /* LoginViewController.swift in Sources */,
@@ -418,6 +422,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2406F39121E23BF200857B58 /* CocktailDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2406F39221E23BF200857B58 /* CocktailDataModel.xcdatamodel */,
+			);
+			currentVersion = 2406F39221E23BF200857B58 /* CocktailDataModel.xcdatamodel */;
+			path = CocktailDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2406F35721E22C7200857B58 /* Project object */;
 }
