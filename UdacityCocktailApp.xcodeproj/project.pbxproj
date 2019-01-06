@@ -24,6 +24,18 @@
 		2406F38E21E232AD00857B58 /* Login+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F38D21E232AD00857B58 /* Login+Extensions.swift */; };
 		2406F39021E2349F00857B58 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F38F21E2349F00857B58 /* SelectionViewController.swift */; };
 		2406F39321E23BF200857B58 /* CocktailDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2406F39121E23BF200857B58 /* CocktailDataModel.xcdatamodeld */; };
+		2406F39621E23D0B00857B58 /* Ingredients+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F39521E23D0B00857B58 /* Ingredients+Extension.swift */; };
+		2406F39821E23E1F00857B58 /* Cocktails+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F39721E23E1F00857B58 /* Cocktails+Extension.swift */; };
+		2406F39A21E23E2C00857B58 /* Bars+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F39921E23E2C00857B58 /* Bars+Extension.swift */; };
+		2406F39C21E23E3E00857B58 /* Spirits+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F39B21E23E3E00857B58 /* Spirits+Extension.swift */; };
+		2406F3A021E2409100857B58 /* CocktailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F39F21E2409100857B58 /* CocktailTableViewController.swift */; };
+		2406F3A221E240EC00857B58 /* CocktailInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F3A121E240EC00857B58 /* CocktailInformationViewController.swift */; };
+		2406F3A421E2411500857B58 /* BarLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F3A321E2411500857B58 /* BarLocationViewController.swift */; };
+		2406F3A621E2416800857B58 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F3A521E2416800857B58 /* DataManager.swift */; };
+		2406F3A821E241E000857B58 /* BarLocations+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F3A721E241E000857B58 /* BarLocations+Extension.swift */; };
+		2406F3AA21E2426300857B58 /* SpiritsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F3A921E2426300857B58 /* SpiritsTableViewController.swift */; };
+		2406F3AD21E2428D00857B58 /* SpiritsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F3AC21E2428D00857B58 /* SpiritsTableCell.swift */; };
+		2406F3AF21E2432000857B58 /* CocktailsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F3AE21E2432000857B58 /* CocktailsTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +58,18 @@
 		2406F38D21E232AD00857B58 /* Login+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login+Extensions.swift"; sourceTree = "<group>"; };
 		2406F38F21E2349F00857B58 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
 		2406F39221E23BF200857B58 /* CocktailDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CocktailDataModel.xcdatamodel; sourceTree = "<group>"; };
+		2406F39521E23D0B00857B58 /* Ingredients+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ingredients+Extension.swift"; sourceTree = "<group>"; };
+		2406F39721E23E1F00857B58 /* Cocktails+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cocktails+Extension.swift"; sourceTree = "<group>"; };
+		2406F39921E23E2C00857B58 /* Bars+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bars+Extension.swift"; sourceTree = "<group>"; };
+		2406F39B21E23E3E00857B58 /* Spirits+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spirits+Extension.swift"; sourceTree = "<group>"; };
+		2406F39F21E2409100857B58 /* CocktailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailTableViewController.swift; sourceTree = "<group>"; };
+		2406F3A121E240EC00857B58 /* CocktailInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailInformationViewController.swift; sourceTree = "<group>"; };
+		2406F3A321E2411500857B58 /* BarLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarLocationViewController.swift; sourceTree = "<group>"; };
+		2406F3A521E2416800857B58 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		2406F3A721E241E000857B58 /* BarLocations+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BarLocations+Extension.swift"; sourceTree = "<group>"; };
+		2406F3A921E2426300857B58 /* SpiritsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritsTableViewController.swift; sourceTree = "<group>"; };
+		2406F3AC21E2428D00857B58 /* SpiritsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritsTableCell.swift; sourceTree = "<group>"; };
+		2406F3AE21E2432000857B58 /* CocktailsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +102,7 @@
 		2406F36121E22C7200857B58 /* UdacityCocktailApp */ = {
 			isa = PBXGroup;
 			children = (
+				2406F39421E23CF000857B58 /* Data Models */,
 				2406F37F21E22D6200857B58 /* Extensions */,
 				2406F37A21E22CFA00857B58 /* Constants */,
 				2406F37521E22CC300857B58 /* Networking */,
@@ -89,6 +114,7 @@
 				2406F36E21E22C7600857B58 /* Info.plist */,
 				2406F38A21E231F600857B58 /* GCDBlackBox.swift */,
 				2406F39121E23BF200857B58 /* CocktailDataModel.xcdatamodeld */,
+				2406F3A521E2416800857B58 /* DataManager.swift */,
 			);
 			path = UdacityCocktailApp;
 			sourceTree = "<group>";
@@ -96,9 +122,14 @@
 		2406F37421E22CAA00857B58 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2406F3AB21E2427700857B58 /* CellView */,
 				2406F38C21E2329200857B58 /* Controller Extensions */,
 				2406F37D21E22D2E00857B58 /* LoginViewController.swift */,
 				2406F38F21E2349F00857B58 /* SelectionViewController.swift */,
+				2406F39F21E2409100857B58 /* CocktailTableViewController.swift */,
+				2406F3A121E240EC00857B58 /* CocktailInformationViewController.swift */,
+				2406F3A321E2411500857B58 /* BarLocationViewController.swift */,
+				2406F3A921E2426300857B58 /* SpiritsTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -136,8 +167,29 @@
 			isa = PBXGroup;
 			children = (
 				2406F38D21E232AD00857B58 /* Login+Extensions.swift */,
+				2406F3A721E241E000857B58 /* BarLocations+Extension.swift */,
 			);
 			path = "Controller Extensions";
+			sourceTree = "<group>";
+		};
+		2406F39421E23CF000857B58 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				2406F39521E23D0B00857B58 /* Ingredients+Extension.swift */,
+				2406F39721E23E1F00857B58 /* Cocktails+Extension.swift */,
+				2406F39921E23E2C00857B58 /* Bars+Extension.swift */,
+				2406F39B21E23E3E00857B58 /* Spirits+Extension.swift */,
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
+		2406F3AB21E2427700857B58 /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				2406F3AC21E2428D00857B58 /* SpiritsTableCell.swift */,
+				2406F3AE21E2432000857B58 /* CocktailsTableCell.swift */,
+			);
+			path = CellView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,16 +265,28 @@
 			files = (
 				2406F37821E22CD500857B58 /* DataClient.swift in Sources */,
 				2406F38121E22D6D00857B58 /* Extensions.swift in Sources */,
+				2406F3A021E2409100857B58 /* CocktailTableViewController.swift in Sources */,
 				2406F38721E22E1000857B58 /* StudentDetails.swift in Sources */,
 				2406F39021E2349F00857B58 /* SelectionViewController.swift in Sources */,
+				2406F39621E23D0B00857B58 /* Ingredients+Extension.swift in Sources */,
 				2406F37921E22CD500857B58 /* Convenience.swift in Sources */,
 				2406F39321E23BF200857B58 /* CocktailDataModel.xcdatamodeld in Sources */,
+				2406F3AA21E2426300857B58 /* SpiritsTableViewController.swift in Sources */,
 				2406F38B21E231F600857B58 /* GCDBlackBox.swift in Sources */,
+				2406F3AF21E2432000857B58 /* CocktailsTableCell.swift in Sources */,
 				2406F36321E22C7200857B58 /* AppDelegate.swift in Sources */,
+				2406F39821E23E1F00857B58 /* Cocktails+Extension.swift in Sources */,
+				2406F39A21E23E2C00857B58 /* Bars+Extension.swift in Sources */,
 				2406F37E21E22D2E00857B58 /* LoginViewController.swift in Sources */,
+				2406F3A421E2411500857B58 /* BarLocationViewController.swift in Sources */,
+				2406F3AD21E2428D00857B58 /* SpiritsTableCell.swift in Sources */,
+				2406F3A821E241E000857B58 /* BarLocations+Extension.swift in Sources */,
+				2406F3A221E240EC00857B58 /* CocktailInformationViewController.swift in Sources */,
 				2406F38521E22DD300857B58 /* UserInformation.swift in Sources */,
 				2406F37C21E22D0800857B58 /* Constants.swift in Sources */,
+				2406F39C21E23E3E00857B58 /* Spirits+Extension.swift in Sources */,
 				2406F38E21E232AD00857B58 /* Login+Extensions.swift in Sources */,
+				2406F3A621E2416800857B58 /* DataManager.swift in Sources */,
 				2406F38921E22E7600857B58 /* DataResponse.swift in Sources */,
 				2406F38421E22DD300857B58 /* User.swift in Sources */,
 			);

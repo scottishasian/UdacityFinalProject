@@ -131,15 +131,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="newbackground" translatesAutoresizingMaskIntoConstraints="NO" id="e1E-NR-Kml">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newbackground" translatesAutoresizingMaskIntoConstraints="NO" id="e1E-NR-Kml">
                                 <rect key="frame" x="0.0" y="64" width="375" height="158"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="e1E-NR-Kml" firstAttribute="trailing" secondItem="nxk-2O-UrJ" secondAttribute="trailing" id="LNr-sE-WuL"/>
-                            <constraint firstItem="e1E-NR-Kml" firstAttribute="leading" secondItem="nxk-2O-UrJ" secondAttribute="leading" id="t5s-0J-1IS"/>
-                            <constraint firstItem="e1E-NR-Kml" firstAttribute="top" secondItem="nxk-2O-UrJ" secondAttribute="top" id="zGP-Vm-1eB"/>
+                            <constraint firstItem="nxk-2O-UrJ" firstAttribute="bottom" secondItem="e1E-NR-Kml" secondAttribute="bottom" constant="445" id="4tZ-ut-gxR"/>
+                            <constraint firstItem="e1E-NR-Kml" firstAttribute="top" secondItem="nxk-2O-UrJ" secondAttribute="top" id="Omj-if-Nco"/>
+                            <constraint firstItem="e1E-NR-Kml" firstAttribute="leading" secondItem="nxk-2O-UrJ" secondAttribute="leading" id="TRr-HA-LC1"/>
+                            <constraint firstItem="e1E-NR-Kml" firstAttribute="trailing" secondItem="nxk-2O-UrJ" secondAttribute="trailing" id="Z7j-yh-rY7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nxk-2O-UrJ"/>
                     </view>
@@ -159,6 +160,121 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="2005.5999999999999" y="124.58770614692655"/>
+        </scene>
+        <!--Cocktail Table View Controller-->
+        <scene sceneID="VCz-CB-tWv">
+            <objects>
+                <tableViewController id="qea-8Q-VZs" customClass="CocktailTableViewController" customModule="UdacityCocktailApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ymb-gr-I5s">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="5Uv-R4-pqe">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5Uv-R4-pqe" id="ff3-kd-ri6" customClass="CocktailsTableCell" customModule="UdacityCocktailApp" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qea-8Q-VZs" id="UBh-Mr-nZ8"/>
+                            <outlet property="delegate" destination="qea-8Q-VZs" id="3RA-ou-H17"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E4E-Mk-80t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2896" y="125"/>
+        </scene>
+        <!--Cocktail Information View Controller-->
+        <scene sceneID="vmn-j1-Tru">
+            <objects>
+                <viewController id="HEK-CE-YpS" customClass="CocktailInformationViewController" customModule="UdacityCocktailApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nIL-il-d8i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6OV-hu-FZ8">
+                                <rect key="frame" x="38" y="588" width="151" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Recommended Spirits"/>
+                                <connections>
+                                    <segue destination="tlm-Q3-AKC" kind="show" id="Kq1-FX-7Ss"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="G45-mq-wsz">
+                                <rect key="frame" x="193" y="588" width="148" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Where can I find this?"/>
+                                <connections>
+                                    <segue destination="V5Q-hq-W5X" kind="presentation" id="3OI-vx-yLd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="kMb-XT-Jpq"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sKb-Oj-6sH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3787" y="134"/>
+        </scene>
+        <!--Spirits Table View Controller-->
+        <scene sceneID="ikw-Nx-EHT">
+            <objects>
+                <tableViewController id="tlm-Q3-AKC" customClass="SpiritsTableViewController" customModule="UdacityCocktailApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mmA-gp-RDM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bgI-9Y-AFj" customClass="SpiritsTableCell" customModule="UdacityCocktailApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bgI-9Y-AFj" id="NAS-5g-K6n">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tlm-Q3-AKC" id="0tr-Ge-5OD"/>
+                            <outlet property="delegate" destination="tlm-Q3-AKC" id="V3o-Wu-BUi"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QP8-dK-P6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4588" y="646"/>
+        </scene>
+        <!--Bar Location View Controller-->
+        <scene sceneID="5Rv-DI-ufy">
+            <objects>
+                <viewController id="V5Q-hq-W5X" customClass="BarLocationViewController" customModule="UdacityCocktailApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7fP-WD-9Oz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8ee-da-InK">
+                                <rect key="frame" x="0.0" y="80" width="375" height="587"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8ee-da-InK" firstAttribute="top" secondItem="aU1-Db-KkS" secondAttribute="top" constant="60" id="dfK-Gd-RNG"/>
+                            <constraint firstItem="8ee-da-InK" firstAttribute="bottom" secondItem="aU1-Db-KkS" secondAttribute="bottom" id="fkH-gS-Fvd"/>
+                            <constraint firstItem="8ee-da-InK" firstAttribute="trailing" secondItem="aU1-Db-KkS" secondAttribute="trailing" id="itH-0c-hYf"/>
+                            <constraint firstItem="8ee-da-InK" firstAttribute="leading" secondItem="aU1-Db-KkS" secondAttribute="leading" id="x9X-aj-a92"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aU1-Db-KkS"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uH8-tf-FVV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4576.8000000000002" y="-124.58770614692655"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9uU-mU-ocC">
