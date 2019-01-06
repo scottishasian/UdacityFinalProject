@@ -36,6 +36,9 @@
 		2406F3AA21E2426300857B58 /* SpiritsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F3A921E2426300857B58 /* SpiritsTableViewController.swift */; };
 		2406F3AD21E2428D00857B58 /* SpiritsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F3AC21E2428D00857B58 /* SpiritsTableCell.swift */; };
 		2406F3AF21E2432000857B58 /* CocktailsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F3AE21E2432000857B58 /* CocktailsTableCell.swift */; };
+		2417124021E254B300208E7B /* AddCocktailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2417123F21E254B300208E7B /* AddCocktailViewController.swift */; };
+		2417124221E2588900208E7B /* General+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2417124121E2588900208E7B /* General+Extentions.swift */; };
+		2417124421E258CA00208E7B /* AddCocktail+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2417124321E258CA00208E7B /* AddCocktail+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,9 @@
 		2406F3A921E2426300857B58 /* SpiritsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritsTableViewController.swift; sourceTree = "<group>"; };
 		2406F3AC21E2428D00857B58 /* SpiritsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritsTableCell.swift; sourceTree = "<group>"; };
 		2406F3AE21E2432000857B58 /* CocktailsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsTableCell.swift; sourceTree = "<group>"; };
+		2417123F21E254B300208E7B /* AddCocktailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCocktailViewController.swift; sourceTree = "<group>"; };
+		2417124121E2588900208E7B /* General+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "General+Extentions.swift"; sourceTree = "<group>"; };
+		2417124321E258CA00208E7B /* AddCocktail+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddCocktail+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,7 @@
 				2406F3A121E240EC00857B58 /* CocktailInformationViewController.swift */,
 				2406F3A321E2411500857B58 /* BarLocationViewController.swift */,
 				2406F3A921E2426300857B58 /* SpiritsTableViewController.swift */,
+				2417123F21E254B300208E7B /* AddCocktailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -168,6 +175,8 @@
 			children = (
 				2406F38D21E232AD00857B58 /* Login+Extensions.swift */,
 				2406F3A721E241E000857B58 /* BarLocations+Extension.swift */,
+				2417124121E2588900208E7B /* General+Extentions.swift */,
+				2417124321E258CA00208E7B /* AddCocktail+Extensions.swift */,
 			);
 			path = "Controller Extensions";
 			sourceTree = "<group>";
@@ -264,10 +273,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2406F37821E22CD500857B58 /* DataClient.swift in Sources */,
+				2417124221E2588900208E7B /* General+Extentions.swift in Sources */,
 				2406F38121E22D6D00857B58 /* Extensions.swift in Sources */,
 				2406F3A021E2409100857B58 /* CocktailTableViewController.swift in Sources */,
 				2406F38721E22E1000857B58 /* StudentDetails.swift in Sources */,
 				2406F39021E2349F00857B58 /* SelectionViewController.swift in Sources */,
+				2417124021E254B300208E7B /* AddCocktailViewController.swift in Sources */,
 				2406F39621E23D0B00857B58 /* Ingredients+Extension.swift in Sources */,
 				2406F37921E22CD500857B58 /* Convenience.swift in Sources */,
 				2406F39321E23BF200857B58 /* CocktailDataModel.xcdatamodeld in Sources */,
@@ -279,6 +290,7 @@
 				2406F39A21E23E2C00857B58 /* Bars+Extension.swift in Sources */,
 				2406F37E21E22D2E00857B58 /* LoginViewController.swift in Sources */,
 				2406F3A421E2411500857B58 /* BarLocationViewController.swift in Sources */,
+				2417124421E258CA00208E7B /* AddCocktail+Extensions.swift in Sources */,
 				2406F3AD21E2428D00857B58 /* SpiritsTableCell.swift in Sources */,
 				2406F3A821E241E000857B58 /* BarLocations+Extension.swift in Sources */,
 				2406F3A221E240EC00857B58 /* CocktailInformationViewController.swift in Sources */,

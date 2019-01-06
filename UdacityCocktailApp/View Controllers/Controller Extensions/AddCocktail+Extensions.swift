@@ -1,5 +1,5 @@
 //
-//  Login+Extensions.swift
+//  AddCocktail+Extensions.swift
 //  UdacityCocktailApp
 //
 //  Created by Kynan Song on 06/01/2019.
@@ -9,18 +9,18 @@
 import Foundation
 import UIKit
 
-extension LoginViewController {
+extension AddCocktailViewController {
     
     ////////////////////Keyboard Behaviour////////////////////////////
     
     @objc func keyboardWillShow(_ notification:Notification) {
-        if UserNameTextField.isFirstResponder || PasswordTextField.isFirstResponder {
+        if measurementsTextField.isFirstResponder || cocktailInformationTextField.isFirstResponder {
             view.frame.origin.y = -getKeyBoardHeight(notification)
         }
     }
     
     @objc func keyboardWillHide(_ notification:Notification) {
-        if UserNameTextField.isFirstResponder || PasswordTextField.isFirstResponder {
+        if measurementsTextField.isFirstResponder || cocktailInformationTextField.isFirstResponder {
             view.frame.origin.y = 0
         }
     }

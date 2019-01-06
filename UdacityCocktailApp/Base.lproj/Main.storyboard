@@ -144,7 +144,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nxk-2O-UrJ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Choose your ingredients" id="pVG-gl-QfZ"/>
+                    <navigationItem key="navigationItem" title="Choose your ingredients" id="pVG-gl-QfZ">
+                        <barButtonItem key="leftBarButtonItem" image="icon_addpin" id="QBM-Oe-u1g">
+                            <connections>
+                                <segue destination="HGk-Jk-Zwb" kind="show" id="b5n-y1-QHj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="69J-cp-cMz" id="Bqy-T9-hV0"/>
                     </connections>
@@ -188,6 +194,110 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E4E-Mk-80t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2896" y="125"/>
+        </scene>
+        <!--Add Cocktail View Controller-->
+        <scene sceneID="OIm-cq-Nx1">
+            <objects>
+                <viewController id="HGk-Jk-Zwb" customClass="AddCocktailViewController" customModule="UdacityCocktailApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l2l-Pg-znX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a new cocktail." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfD-o4-sAG">
+                                <rect key="frame" x="51" y="90" width="272" height="38"/>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zm9-XC-dzF">
+                                <rect key="frame" x="109" y="151" width="157" height="120"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write name here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="met-oE-v89">
+                                        <rect key="frame" x="0.0" y="0.0" width="157" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write ingredient here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h32-FP-4CY">
+                                        <rect key="frame" x="0.0" y="30" width="157" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write ingredient here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Cx-pX-RYM">
+                                        <rect key="frame" x="0.0" y="60" width="157" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write ingredient here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ti1-cc-u6x">
+                                        <rect key="frame" x="0.0" y="90" width="157" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Wbq-aB-Hmh">
+                                <rect key="frame" x="51" y="304" width="272" height="231"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write measurements below." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XJ-cA-4y2">
+                                        <rect key="frame" x="0.0" y="0.0" width="272" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dTc-ao-Yzq">
+                                        <rect key="frame" x="0.0" y="20.5" width="272" height="62"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="62" id="iCc-cP-lda"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write information here." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Xy-3v-33P">
+                                        <rect key="frame" x="0.0" y="82.5" width="272" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FnG-rX-hmh">
+                                        <rect key="frame" x="0.0" y="103" width="272" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JcJ-fT-C37" firstAttribute="trailing" secondItem="wfD-o4-sAG" secondAttribute="trailing" constant="52" id="9ft-zP-Bvt"/>
+                            <constraint firstItem="zm9-XC-dzF" firstAttribute="top" secondItem="wfD-o4-sAG" secondAttribute="bottom" constant="23" id="Ffp-Tt-Ehp"/>
+                            <constraint firstItem="Wbq-aB-Hmh" firstAttribute="leading" secondItem="JcJ-fT-C37" secondAttribute="leading" constant="51" id="O1k-2g-eLe"/>
+                            <constraint firstItem="wfD-o4-sAG" firstAttribute="leading" secondItem="JcJ-fT-C37" secondAttribute="leading" constant="51" id="Y24-dL-0lg"/>
+                            <constraint firstItem="JcJ-fT-C37" firstAttribute="trailing" secondItem="Wbq-aB-Hmh" secondAttribute="trailing" constant="52" id="kcs-gA-XQr"/>
+                            <constraint firstItem="JcJ-fT-C37" firstAttribute="trailing" secondItem="zm9-XC-dzF" secondAttribute="trailing" constant="109" id="qJB-Vd-Zrl"/>
+                            <constraint firstItem="zm9-XC-dzF" firstAttribute="leading" secondItem="JcJ-fT-C37" secondAttribute="leading" constant="109" id="qzF-zv-K02"/>
+                            <constraint firstItem="wfD-o4-sAG" firstAttribute="top" secondItem="JcJ-fT-C37" secondAttribute="top" constant="26" id="s7J-EP-99h"/>
+                            <constraint firstItem="Wbq-aB-Hmh" firstAttribute="top" secondItem="zm9-XC-dzF" secondAttribute="bottom" constant="33" id="uV7-Sn-CQx"/>
+                            <constraint firstItem="JcJ-fT-C37" firstAttribute="bottom" secondItem="Wbq-aB-Hmh" secondAttribute="bottom" constant="132" id="vaw-DX-hig"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JcJ-fT-C37"/>
+                    </view>
+                    <connections>
+                        <outlet property="cocktailInformationTextField" destination="3Xy-3v-33P" id="89r-bB-7G0"/>
+                        <outlet property="cocktailName" destination="met-oE-v89" id="zcl-DU-y6A"/>
+                        <outlet property="ingredient1" destination="h32-FP-4CY" id="cWA-Gf-Ys0"/>
+                        <outlet property="ingredient2" destination="1Cx-pX-RYM" id="Gbq-6f-G4j"/>
+                        <outlet property="ingredient3" destination="ti1-cc-u6x" id="ni7-f2-1MQ"/>
+                        <outlet property="measurementsTextField" destination="dTc-ao-Yzq" id="8ct-MI-7Iz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="See-54-Isr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2477.5999999999999" y="994.45277361319347"/>
         </scene>
         <!--Cocktail Information View Controller-->
         <scene sceneID="vmn-j1-Tru">
@@ -296,6 +406,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_addpin" width="24" height="24"/>
         <image name="newbackground" width="1024" height="500"/>
         <image name="newicon" width="1936" height="1936"/>
     </resources>
