@@ -24,8 +24,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         LoadingIndicator.isHidden = true
         
         UserNameTextField.text = defaults.string(forKey: "username")
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        subscribeToKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        unsubscribeToKeyboardNotifications()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -40,7 +48,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if username != "" && password != "" {
             LoadingIndicator.isHidden = false
             self.LoadingIndicator.startAnimating()
-            //logUserIn(userName: username!, password: password!)
+            logUserIn(userName: username!, password: password!)
             defaults.set(username, forKey: "username")
             dismissKeyboard()
             print("Can log in")
@@ -57,25 +65,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         openLink(Constants.Udacity.SignUp)
     }
     
-//    private func logUserIn(userName : String, password : String) {
-//        DataClient.sharedInstance().authenticateUser(username: userName, password: password) {(success, error) in
-//            if success {
-//                performUIUpdatesOnMain {
-//                    self.UserNameTextField.text = ""
-//                    self.PasswordTextField.text = ""
-//                }
-//                let controller = self.storyboard!.instantiateViewController(withIdentifier: "AppEntranceController") as! UITabBarController
-//                self.present(controller, animated: true, completion: nil)
-//            } else {
-//                performUIUpdatesOnMain {
-//                    self.showInfo(withTitle: "Login Error", withMessage: error ?? "Error while performing login.")
-//                    self.LoadingIndicator.isHidden = true
-//                    print(error ?? Constants.ErrorMessages.loginError)
-//                }
-//            }
-//            performUIUpdatesOnMain {
-//                self.LoadingIndicator.stopAnimating()
-//            }
-//        }
-//    }
+    private func logUserIn(userName : String, password : String) {
+        DataClient.sharedInstance().authenticateUser(username: userName, password: password) {(success, error) in
+            if success {
+                performUIUpdatesOnMain {
+                    self.UserNameTextField.text = ""
+                    self.PasswordTextField.text = ""
+                    self.unsubscribeToKeyboardNotifications()
+                }
+                let controller = self.storyboard!.instantiateViewController(withIdentifier: "AppEntranceController") as! UINavigationController
+                self.present(controller, animated: true, completion: nil)
+            } else {
+                performUIUpdatesOnMain {
+                    self.showInfo(withTitle: "Login Error", withMessage: error ?? "Error while performing login.")
+                    self.LoadingIndicator.isHidden = true
+                    print(error ?? Constants.ErrorMessages.loginError)
+                }
+            }
+            performUIUpdatesOnMain {
+                self.LoadingIndicator.stopAnimating()
+            }
+        }
+    }
 }

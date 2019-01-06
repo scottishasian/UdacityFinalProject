@@ -11,12 +11,6 @@ import UIKit
 
 extension UIViewController {
     
-    func performUIUpdatesOnMain(_ updates: @escaping () -> Void) {
-        DispatchQueue.main.async {
-            updates()
-        }
-    }
-    
     var appDelegate: AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
     }
@@ -39,9 +33,8 @@ extension UIViewController {
             return
         }
         UIApplication.shared.open(url)
-    }
-    
-   
+        }
+
 }
 
 

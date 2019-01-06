@@ -20,6 +20,9 @@
 		2406F38521E22DD300857B58 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F38321E22DD300857B58 /* UserInformation.swift */; };
 		2406F38721E22E1000857B58 /* StudentDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F38621E22E1000857B58 /* StudentDetails.swift */; };
 		2406F38921E22E7600857B58 /* DataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F38821E22E7500857B58 /* DataResponse.swift */; };
+		2406F38B21E231F600857B58 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F38A21E231F600857B58 /* GCDBlackBox.swift */; };
+		2406F38E21E232AD00857B58 /* Login+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F38D21E232AD00857B58 /* Login+Extensions.swift */; };
+		2406F39021E2349F00857B58 /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F38F21E2349F00857B58 /* SelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		2406F38321E22DD300857B58 /* UserInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		2406F38621E22E1000857B58 /* StudentDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentDetails.swift; sourceTree = "<group>"; };
 		2406F38821E22E7500857B58 /* DataResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataResponse.swift; sourceTree = "<group>"; };
+		2406F38A21E231F600857B58 /* GCDBlackBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
+		2406F38D21E232AD00857B58 /* Login+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login+Extensions.swift"; sourceTree = "<group>"; };
+		2406F38F21E2349F00857B58 /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,7 @@
 				2406F36921E22C7600857B58 /* Assets.xcassets */,
 				2406F36B21E22C7600857B58 /* LaunchScreen.storyboard */,
 				2406F36E21E22C7600857B58 /* Info.plist */,
+				2406F38A21E231F600857B58 /* GCDBlackBox.swift */,
 			);
 			path = UdacityCocktailApp;
 			sourceTree = "<group>";
@@ -86,7 +93,9 @@
 		2406F37421E22CAA00857B58 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2406F38C21E2329200857B58 /* Controller Extensions */,
 				2406F37D21E22D2E00857B58 /* LoginViewController.swift */,
+				2406F38F21E2349F00857B58 /* SelectionViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -118,6 +127,14 @@
 				2406F38021E22D6D00857B58 /* Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2406F38C21E2329200857B58 /* Controller Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2406F38D21E232AD00857B58 /* Login+Extensions.swift */,
+			);
+			path = "Controller Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,11 +211,14 @@
 				2406F37821E22CD500857B58 /* DataClient.swift in Sources */,
 				2406F38121E22D6D00857B58 /* Extensions.swift in Sources */,
 				2406F38721E22E1000857B58 /* StudentDetails.swift in Sources */,
+				2406F39021E2349F00857B58 /* SelectionViewController.swift in Sources */,
 				2406F37921E22CD500857B58 /* Convenience.swift in Sources */,
+				2406F38B21E231F600857B58 /* GCDBlackBox.swift in Sources */,
 				2406F36321E22C7200857B58 /* AppDelegate.swift in Sources */,
 				2406F37E21E22D2E00857B58 /* LoginViewController.swift in Sources */,
 				2406F38521E22DD300857B58 /* UserInformation.swift in Sources */,
 				2406F37C21E22D0800857B58 /* Constants.swift in Sources */,
+				2406F38E21E232AD00857B58 /* Login+Extensions.swift in Sources */,
 				2406F38921E22E7600857B58 /* DataResponse.swift in Sources */,
 				2406F38421E22DD300857B58 /* User.swift in Sources */,
 			);
