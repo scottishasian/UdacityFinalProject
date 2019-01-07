@@ -14,6 +14,7 @@ class SelectionViewController: UIViewController {
     @IBOutlet weak var ingredientsButton: UIButton!
     @IBOutlet weak var ingredientsTableView: UITableView!
     
+    var ingredientsList = ["Rum", "Tequila", "Whisky"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +39,13 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return ingredientsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ingredientCell", for: indexPath)
+        cell.textLabel?.text = ingredientsList[indexPath.row]
+        return cell
     }
     
     
