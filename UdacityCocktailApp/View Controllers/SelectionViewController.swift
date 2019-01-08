@@ -7,28 +7,31 @@
 //
 
 import UIKit
-import CoreData
+//import CoreData
 
 class SelectionViewController: UIViewController {
 
     @IBOutlet weak var ingredientsButton: UIButton!
     @IBOutlet weak var ingredientsTableView: UITableView!
     
-    var ingredientsList = ["Rum", "Tequila", "Whisky"]
+    var ingredientsList = ["Rum", "Tequila", "Whisky", "Vodka"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ingredientsTableView.dataSource = self
+        ingredientsTableView.isHidden = true
 
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
 
     @IBAction func dropDownTapped(_ sender: Any) {
+        
+        UIView.animate(withDuration: 0.3) {
+            self.ingredientsTableView.isHidden = false
+        }
+        
     }
     
 
