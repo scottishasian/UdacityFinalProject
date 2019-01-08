@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="18C54" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18A391" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="BarLocation" representedClassName="BarLocation" syncable="YES" codeGenerationType="class">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="cocktail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cocktail" inverseName="bars" inverseEntity="Cocktail" syncable="YES"/>
     </entity>
     <entity name="Cocktail" representedClassName="Cocktail" syncable="YES" codeGenerationType="class">
+        <attribute name="information" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="measurments" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="bars" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BarLocation" inverseName="cocktail" inverseEntity="BarLocation" syncable="YES"/>
-        <relationship name="ingredient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ingredients" inverseName="cocktails" inverseEntity="Ingredients" syncable="YES"/>
+        <relationship name="ingredient" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingredients" inverseName="cocktails" inverseEntity="Ingredients" syncable="YES"/>
         <relationship name="spirits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RecommendedSpirits" inverseName="cocktail" inverseEntity="RecommendedSpirits" syncable="YES"/>
     </entity>
     <entity name="Ingredients" representedClassName="Ingredients" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="cocktails" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cocktail" inverseName="ingredient" inverseEntity="Cocktail" syncable="YES"/>
     </entity>
     <entity name="RecommendedSpirits" representedClassName="RecommendedSpirits" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="cocktail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cocktail" inverseName="spirits" inverseEntity="Cocktail" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Ingredients" positionX="-225" positionY="-45" width="128" height="58"/>
-        <element name="Cocktail" positionX="-36" positionY="-45" width="128" height="88"/>
-        <element name="RecommendedSpirits" positionX="153" positionY="0" width="128" height="58"/>
-        <element name="BarLocation" positionX="151" positionY="-99" width="128" height="58"/>
+        <element name="BarLocation" positionX="151" positionY="-99" width="128" height="88"/>
+        <element name="Cocktail" positionX="-36" positionY="-45" width="128" height="133"/>
+        <element name="Ingredients" positionX="-225" positionY="-45" width="128" height="75"/>
+        <element name="RecommendedSpirits" positionX="153" positionY="0" width="128" height="88"/>
     </elements>
 </model>
