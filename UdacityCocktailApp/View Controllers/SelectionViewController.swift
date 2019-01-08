@@ -24,6 +24,7 @@ class SelectionViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    //https://stackoverflow.com/questions/27508771/core-data-many-to-many-relationship
     
 
     @IBAction func dropDownTapped(_ sender: Any) {

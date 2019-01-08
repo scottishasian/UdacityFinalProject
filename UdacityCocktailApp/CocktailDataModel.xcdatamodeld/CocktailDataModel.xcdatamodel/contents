@@ -3,7 +3,7 @@
     <entity name="BarLocation" representedClassName="BarLocation" syncable="YES" codeGenerationType="class">
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="cocktail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cocktail" inverseName="bars" inverseEntity="Cocktail" syncable="YES"/>
+        <relationship name="cocktail" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cocktail" inverseName="bars" inverseEntity="Cocktail" syncable="YES"/>
     </entity>
     <entity name="Cocktail" representedClassName="Cocktail" syncable="YES" codeGenerationType="class">
         <attribute name="information" optional="YES" attributeType="String" syncable="YES"/>
@@ -21,7 +21,7 @@
     <entity name="RecommendedSpirits" representedClassName="RecommendedSpirits" syncable="YES" codeGenerationType="class">
         <attribute name="attribute" optional="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="cocktail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cocktail" inverseName="spirits" inverseEntity="Cocktail" syncable="YES"/>
+        <relationship name="cocktail" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cocktail" inverseName="spirits" inverseEntity="Cocktail" syncable="YES"/>
     </entity>
     <entity name="Reference" representedClassName="Reference" syncable="YES" codeGenerationType="class">
         <attribute name="position" optional="YES" syncable="YES"/>
