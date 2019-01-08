@@ -10,22 +10,29 @@
         <attribute name="measurments" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="bars" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BarLocation" inverseName="cocktail" inverseEntity="BarLocation" syncable="YES"/>
-        <relationship name="ingredient" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingredients" inverseName="cocktails" inverseEntity="Ingredients" syncable="YES"/>
+        <relationship name="ingredientReference" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Reference" inverseName="cocktail" inverseEntity="Reference" syncable="YES"/>
         <relationship name="spirits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RecommendedSpirits" inverseName="cocktail" inverseEntity="RecommendedSpirits" syncable="YES"/>
     </entity>
     <entity name="Ingredients" representedClassName="Ingredients" syncable="YES" codeGenerationType="class">
+        <attribute name="attribute" optional="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="cocktails" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cocktail" inverseName="ingredient" inverseEntity="Cocktail" syncable="YES"/>
+        <relationship name="reference" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Reference" inverseName="ingredient" inverseEntity="Reference" syncable="YES"/>
     </entity>
     <entity name="RecommendedSpirits" representedClassName="RecommendedSpirits" syncable="YES" codeGenerationType="class">
+        <attribute name="attribute" optional="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="cocktail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cocktail" inverseName="spirits" inverseEntity="Cocktail" syncable="YES"/>
+    </entity>
+    <entity name="Reference" representedClassName="Reference" syncable="YES" codeGenerationType="class">
+        <attribute name="position" optional="YES" syncable="YES"/>
+        <relationship name="cocktail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cocktail" inverseName="ingredientReference" inverseEntity="Cocktail" syncable="YES"/>
+        <relationship name="ingredient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ingredients" inverseName="reference" inverseEntity="Ingredients" syncable="YES"/>
     </entity>
     <elements>
         <element name="BarLocation" positionX="151" positionY="-99" width="128" height="88"/>
-        <element name="Cocktail" positionX="-36" positionY="-45" width="128" height="133"/>
-        <element name="Ingredients" positionX="-225" positionY="-45" width="128" height="75"/>
         <element name="RecommendedSpirits" positionX="153" positionY="0" width="128" height="88"/>
+        <element name="Ingredients" positionX="-530.6171875" positionY="-17.671875" width="128" height="88"/>
+        <element name="Cocktail" positionX="-312.73046875" positionY="-94.42578125" width="128" height="133"/>
+        <element name="Reference" positionX="-518.30078125" positionY="-184.4375" width="128" height="88"/>
     </elements>
 </model>
