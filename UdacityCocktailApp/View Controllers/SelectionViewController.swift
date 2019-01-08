@@ -27,11 +27,21 @@ class SelectionViewController: UIViewController {
     
 
     @IBAction func dropDownTapped(_ sender: Any) {
-        
-        UIView.animate(withDuration: 0.3) {
-            self.ingredientsTableView.isHidden = false
+        let toggle = ingredientsTableView.isHidden
+        animateDropDown(toggle: toggle)
+
+    }
+    
+    func animateDropDown(toggle: Bool) {
+        if toggle {
+            UIView.animate(withDuration: 0.3) {
+                self.ingredientsTableView.isHidden = false
+            }
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                self.ingredientsTableView.isHidden = true
+            }
         }
-        
     }
     
 
@@ -48,6 +58,7 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ingredientCell", for: indexPath)
         cell.textLabel?.text = ingredientsList[indexPath.row]
+        //Will be populated via inserted data later.
         return cell
     }
     
