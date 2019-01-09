@@ -25,6 +25,7 @@ class SelectionViewController: UIViewController {
     }
 
     //https://stackoverflow.com/questions/27508771/core-data-many-to-many-relationship
+    //https://stackoverflow.com/questions/24146524/setting-an-nsmanagedobject-relationship-in-swift/24146727#24146727
     
 
     @IBAction func dropDownTapped(_ sender: Any) {
