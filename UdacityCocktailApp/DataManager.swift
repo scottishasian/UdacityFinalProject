@@ -18,12 +18,12 @@ class DataManager {
     let storeCoordinator: NSPersistentStoreCoordinator
     let persistedCOntext: NSManagedObjectContext
     let backgroundContext: NSManagedObjectContext!
-    let pinContext: NSManagedObjectContext
+    let context: NSManagedObjectContext
     
     //Needed as extensions can't access datamanager properties.
     class func sharedInstance() -> DataManager {
         struct SingletonClass {
-            static var sharedInstance = DataManager(modelName: "Virtual_Tourist_Model")
+            static var sharedInstance = DataManager(modelName: "CocktailDataModel")
         }
         return SingletonClass.sharedInstance
     }
@@ -49,11 +49,11 @@ class DataManager {
         persistedCOntext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         persistedCOntext.persistentStoreCoordinator = storeCoordinator
         
-        pinContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        pinContext.parent = persistedCOntext
+        context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        context.parent = persistedCOntext
         
         backgroundContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-        backgroundContext.parent = pinContext
+        backgroundContext.parent = context
         
         //Access SQLite database. Has to be done in init as due to issues of being called before initialisation.
         //Only functional once the store is added to the coordinator.

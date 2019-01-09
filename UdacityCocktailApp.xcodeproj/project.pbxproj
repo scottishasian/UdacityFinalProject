@@ -39,6 +39,7 @@
 		2417124021E254B300208E7B /* AddCocktailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2417123F21E254B300208E7B /* AddCocktailViewController.swift */; };
 		2417124221E2588900208E7B /* General+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2417124121E2588900208E7B /* General+Extentions.swift */; };
 		2417124421E258CA00208E7B /* AddCocktail+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2417124321E258CA00208E7B /* AddCocktail+Extensions.swift */; };
+		ED547E2B21E5EF3D00EC16EA /* DataManager_SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED547E2A21E5EF3D00EC16EA /* DataManager_SeedData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		2417123F21E254B300208E7B /* AddCocktailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCocktailViewController.swift; sourceTree = "<group>"; };
 		2417124121E2588900208E7B /* General+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "General+Extentions.swift"; sourceTree = "<group>"; };
 		2417124321E258CA00208E7B /* AddCocktail+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddCocktail+Extensions.swift"; sourceTree = "<group>"; };
+		ED547E2A21E5EF3D00EC16EA /* DataManager_SeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager_SeedData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				2406F38021E22D6D00857B58 /* Extensions.swift */,
+				ED547E2A21E5EF3D00EC16EA /* DataManager_SeedData.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				2406F37C21E22D0800857B58 /* Constants.swift in Sources */,
 				2406F39C21E23E3E00857B58 /* Spirits+Extension.swift in Sources */,
 				2406F38E21E232AD00857B58 /* Login+Extensions.swift in Sources */,
+				ED547E2B21E5EF3D00EC16EA /* DataManager_SeedData.swift in Sources */,
 				2406F3A621E2416800857B58 /* DataManager.swift in Sources */,
 				2406F38921E22E7600857B58 /* DataResponse.swift in Sources */,
 				2406F38421E22DD300857B58 /* User.swift in Sources */,

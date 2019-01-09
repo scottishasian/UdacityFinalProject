@@ -11,4 +11,15 @@ import CoreData
 
 extension Ingredients {
     
+    static let name = "Ingredients"
+    
+    convenience init(name: String, context: NSManagedObjectContext) {
+        if let savedEntity = NSEntityDescription.entity(forEntityName: Ingredients.name, in: context) {
+            self.init(entity: savedEntity, insertInto: context)
+            self.name = name
+        } else {
+            fatalError("Entity name not found")
+        }
+    }
+    
 }

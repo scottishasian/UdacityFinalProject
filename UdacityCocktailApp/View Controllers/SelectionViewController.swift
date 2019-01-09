@@ -31,6 +31,7 @@ class SelectionViewController: UIViewController {
     @IBAction func dropDownTapped(_ sender: Any) {
         let toggle = ingredientsTableView.isHidden
         animateDropDown(toggle: toggle)
+        DataManager.sharedInstance().printIngredients()
 
     }
     
