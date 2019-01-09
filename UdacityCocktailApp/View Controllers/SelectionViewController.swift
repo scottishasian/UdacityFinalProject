@@ -20,6 +20,7 @@ class SelectionViewController: UIViewController {
         super.viewDidLoad()
         ingredientsTableView.dataSource = self
         ingredientsTableView.isHidden = true
+        DataManager.sharedInstance().seedIngredients()
 
         // Do any additional setup after loading the view.
     }

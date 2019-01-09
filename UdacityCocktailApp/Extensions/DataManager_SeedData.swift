@@ -11,7 +11,7 @@ import CoreData
 
 extension DataManager {
     
-    private func seedIngredients() {
+    public func seedIngredients() {
         
 
         let baseIngredients = [
