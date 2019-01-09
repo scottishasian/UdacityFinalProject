@@ -14,19 +14,19 @@ extension DataManager {
     private func seedIngredients() {
         
         let baseIngredients = [
-            (name: "Cointrieu"),
-            (name: "Vodka"),
-            (name: "Gin"),
-            (name: "Rum"),
-            (name: "Tequila"),
-            (name: "Whisky"),
-            (name: "Bourbon"),
-            (name: "Mescal"),
-            (name: "Campari"),
-            (name: "Vermouth"),
-            (name: "Lime"),
-            (name: "Lemon")
-            ] as [Any]
+            ("Cointrieu"),
+            ("Vodka"),
+            ("Gin"),
+            ("Rum"),
+            ("Tequila"),
+            ("Whisky"),
+            ("Bourbon"),
+            ("Mescal"),
+            ("Campari"),
+            ("Vermouth"),
+            ("Lime"),
+            ("Lemon")
+            ]
         
         for ingredient in baseIngredients {
             let ingredientsList = NSEntityDescription.insertNewObject(forEntityName: "Ingredients", into: context) as? Ingredients
@@ -41,15 +41,16 @@ extension DataManager {
     }
     
     public func printIngredients() {
-        let ingredientFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Ingredients")
+        //not working currently
+        let ingredientFetchRequest = NSFetchRequest<Ingredients>(entityName: "Ingredients")
         let primarySortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         
         ingredientFetchRequest.sortDescriptors = [primarySortDescriptor]
         
-        let ingredientsList = (try! context.execute(ingredientFetchRequest)) as! [Ingredients]
+        let ingredientsList = (try! context.fetch(ingredientFetchRequest as! NSFetchRequest<NSFetchRequestResult>)) as! [Ingredients]
         
         for ingredient in ingredientsList {
-            print("Ingredient name: \(ingredient.name)")
+            print("Ingredient name: \(String(describing: ingredient.name))")
         }
     }
     

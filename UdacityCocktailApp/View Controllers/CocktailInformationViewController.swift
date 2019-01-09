@@ -11,6 +11,12 @@ import CoreData
 
 class CocktailInformationViewController: UIViewController {
 
+    @IBOutlet weak var cocktailName: UILabel!
+    @IBOutlet weak var cocktailInformation: UILabel!
+    @IBOutlet weak var cocktailMeasurements: UILabel!
+    @IBOutlet weak var recommendedSpirits: UIButton!
+    @IBOutlet weak var cocktailLocation: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,14 +29,10 @@ class CocktailInformationViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func findBar(_ sender: Any) {
     }
-    */
-
+    
+    @IBAction func findSpirits(_ sender: Any) {
+    }
+    
 }
