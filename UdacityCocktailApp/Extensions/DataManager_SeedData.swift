@@ -13,24 +13,27 @@ extension DataManager {
     
     private func seedIngredients() {
         
+
         let baseIngredients = [
-            ("Cointrieu"),
-            ("Vodka"),
-            ("Gin"),
-            ("Rum"),
-            ("Tequila"),
-            ("Whisky"),
-            ("Bourbon"),
-            ("Mescal"),
-            ("Campari"),
-            ("Vermouth"),
-            ("Lime"),
-            ("Lemon")
-            ]
+            (name: "Cointrieu", reference: 1),
+            (name: "Vodka", reference: 2),
+            (name: "Gin", reference: 3),
+            (name: "Rum", reference: 4),
+            (name: "Tequila", reference: 5),
+            (name: "Whisky", reference: 6),
+            (name: "Bourbon", reference: 7),
+            (name: "Mescal", reference: 8),
+            (name: "Campari", reference: 9),
+            (name: "Vermouth", reference: 10),
+            (name: "Lime", reference: 11),
+            (name: "Lemon", reference: 12)
+            
+        ]
         
         for ingredient in baseIngredients {
             let ingredientsList = NSEntityDescription.insertNewObject(forEntityName: "Ingredients", into: context) as? Ingredients
-            ingredientsList?.name = (ingredient as AnyObject).name
+            ingredientsList?.name = ingredient.name
+            print(ingredientsList!)
         }
         
         do {
@@ -41,16 +44,15 @@ extension DataManager {
     }
     
     public func printIngredients() {
-        //not working currently
         let ingredientFetchRequest = NSFetchRequest<Ingredients>(entityName: "Ingredients")
         let primarySortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         
         ingredientFetchRequest.sortDescriptors = [primarySortDescriptor]
         
-        let ingredientsList = (try! context.fetch(ingredientFetchRequest as! NSFetchRequest<NSFetchRequestResult>)) as! [Ingredients]
+        let allIngredients = (try! context.fetch(ingredientFetchRequest as! NSFetchRequest<NSFetchRequestResult>)) as! [Ingredients]
         
-        for ingredient in ingredientsList {
-            print("Ingredient name: \(String(describing: ingredient.name))")
+        for ingredient in allIngredients {
+            print("Ingredient Name: \(ingredient.name)", terminator: "")
         }
     }
     
