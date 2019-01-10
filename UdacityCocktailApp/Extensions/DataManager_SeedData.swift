@@ -11,9 +11,10 @@ import CoreData
 
 extension DataManager {
     
+    //Ingredient seed data
+
     public func seedIngredients() {
         
-
         let baseIngredients = [
             (name: "Cointrieu", reference: 1),
             (name: "Vodka", reference: 2),
@@ -49,11 +50,19 @@ extension DataManager {
         
         ingredientFetchRequest.sortDescriptors = [primarySortDescriptor]
         
+        
+        
         let allIngredients = (try! context.fetch(ingredientFetchRequest as! NSFetchRequest<NSFetchRequestResult>)) as! [Ingredients]
+
         
         for ingredient in allIngredients {
             print("Ingredient Name: \(ingredient.name)", terminator: "")
         }
     }
+}
+
+extension DataManager {
+    
+    //Cocktails seed data
     
 }

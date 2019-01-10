@@ -28,6 +28,8 @@ class CocktailInformationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //Add weather API and "should I go out" page?
+    
 
     @IBAction func findBar(_ sender: Any) {
     }

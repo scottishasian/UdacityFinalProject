@@ -7,13 +7,14 @@
 //
 
 import UIKit
-//import CoreData
+import CoreData
 
 class SelectionViewController: UIViewController {
 
     @IBOutlet weak var ingredientsButton: UIButton!
     @IBOutlet weak var ingredientsTableView: UITableView!
     
+    var fetchResultController : NSFetchedResultsController<Ingredients>!
     var ingredientsList = ["Rum", "Tequila", "Whisky", "Vodka"]
     
     override func viewDidLoad() {
@@ -27,6 +28,7 @@ class SelectionViewController: UIViewController {
 
     //https://stackoverflow.com/questions/27508771/core-data-many-to-many-relationship
     //https://stackoverflow.com/questions/24146524/setting-an-nsmanagedobject-relationship-in-swift/24146727#24146727
+    //https://stackoverflow.com/questions/29028574/ios-swift-how-to-store-array-with-core-data
     
 
     @IBAction func dropDownTapped(_ sender: Any) {
@@ -48,7 +50,28 @@ class SelectionViewController: UIViewController {
         }
     }
     
-
+    func fetchIngredientsList(_ baseIngredients: Ingredients) {
+        
+        let fetchRequest = NSFetchRequest<Ingredients>(entityName: Ingredients.name)
+        let primarySortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [primarySortDescriptor]
+        
+        fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DataManager.sharedInstance().context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchResultController.delegate = self as? NSFetchedResultsControllerDelegate
+        
+        var error: NSError?
+        do {
+            try fetchResultController.performFetch()
+        } catch let fetchError as NSError {
+            error = fetchError
+        }
+        
+        if let error = error {
+            print("\(error)")
+        }
+        
+    }
+    
 }
 
 
