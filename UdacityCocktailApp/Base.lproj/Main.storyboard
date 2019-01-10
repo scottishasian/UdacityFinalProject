@@ -249,6 +249,9 @@
                             <outlet property="delegate" destination="qea-8Q-VZs" id="3RA-ou-H17"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="cocktailList" destination="ymb-gr-I5s" id="VUV-6L-gyc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E4E-Mk-80t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

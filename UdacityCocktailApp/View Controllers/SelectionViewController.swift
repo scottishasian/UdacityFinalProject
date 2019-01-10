@@ -15,6 +15,7 @@ class SelectionViewController: UIViewController {
     @IBOutlet weak var ingredientsTableView: UITableView!
     
     var fetchResultController : NSFetchedResultsController<Ingredients>!
+    var ingredientsData = [Ingredients]()
     var ingredientsList = ["Rum", "Tequila", "Whisky", "Vodka"]
     
     override func viewDidLoad() {
@@ -22,7 +23,6 @@ class SelectionViewController: UIViewController {
         ingredientsTableView.dataSource = self
         ingredientsTableView.isHidden = true
         DataManager.sharedInstance().seedIngredients()
-
         // Do any additional setup after loading the view.
     }
 
@@ -34,7 +34,7 @@ class SelectionViewController: UIViewController {
     @IBAction func dropDownTapped(_ sender: Any) {
         let toggle = ingredientsTableView.isHidden
         animateDropDown(toggle: toggle)
-        DataManager.sharedInstance().printIngredients()
+        //DataManager.sharedInstance().printIngredients()
 
     }
     
@@ -50,9 +50,9 @@ class SelectionViewController: UIViewController {
         }
     }
     
-    func fetchIngredientsList(_ baseIngredients: Ingredients) {
+    func fetchIngredientsList() {
         
-        let fetchRequest = NSFetchRequest<Ingredients>(entityName: Ingredients.name)
+        let fetchRequest = NSFetchRequest<Ingredients>(entityName: "Ingredients")
         let primarySortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [primarySortDescriptor]
         
@@ -61,7 +61,7 @@ class SelectionViewController: UIViewController {
         
         var error: NSError?
         do {
-            try fetchResultController.performFetch()
+            try self.fetchResultController.performFetch()
         } catch let fetchError as NSError {
             error = fetchError
         }
@@ -79,20 +79,21 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ingredientsList.count
+        guard let ingredients = fetchResultController.fetchedObjects else {return 0}
+        return ingredients.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ingredientCell", for: indexPath)
-        cell.textLabel?.text = ingredientsList[indexPath.row]
-        //Will be populated via inserted data later.
+        //cell.textLabel?.text = ingredientsList[indexPath.row]
+        let ingredients = fetchResultController.object(at: indexPath)
+        cell.textLabel?.text = ingredients.name
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Did select \(ingredientsList[indexPath.row])")
     }
-    
-    
-    
 }
+
+

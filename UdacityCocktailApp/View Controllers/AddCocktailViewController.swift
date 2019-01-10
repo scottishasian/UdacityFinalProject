@@ -20,6 +20,8 @@ class AddCocktailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var cocktailInformationTextField: UITextView!
     
 
+    //https://cocoacasts.com/implement-the-nsfetchedresultscontrollerdelegate-protocol-with-swift-3
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.cocktailName.delegate = self
