@@ -23,6 +23,7 @@ class SelectionViewController: UIViewController {
         ingredientsTableView.dataSource = self
         ingredientsTableView.isHidden = true
         DataManager.sharedInstance().seedIngredients()
+        fetchIngredientsList()
         // Do any additional setup after loading the view.
     }
 
@@ -52,12 +53,13 @@ class SelectionViewController: UIViewController {
     
     func fetchIngredientsList() {
         
-        let fetchRequest = NSFetchRequest<Ingredients>(entityName: "Ingredients")
+        //let fetchRequest = NSFetchRequest<Ingredients>(entityName: "Ingredients")
+        let fetchRequest: NSFetchRequest<Ingredients> = Ingredients.fetchRequest()
         let primarySortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [primarySortDescriptor]
         
         fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DataManager.sharedInstance().context, sectionNameKeyPath: nil, cacheName: nil)
-        fetchResultController.delegate = self as? NSFetchedResultsControllerDelegate
+        fetchResultController.delegate = self
         
         var error: NSError?
         do {
