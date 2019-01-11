@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UdacityCocktailApp/View Controllers/SelectionViewController.swift"
-            timestampString = "568930670.399999"
+            timestampString = "568937884.491637"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "fetchIngredientsList()"
             landmarkType = "7">
          </BreakpointContent>

@@ -26,6 +26,15 @@ class SelectionViewController: UIViewController {
         fetchIngredientsList()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let indexPath = ingredientsTableView.indexPathForSelectedRow {
+            ingredientsTableView.deselectRow(at: indexPath, animated: false)
+            ingredientsTableView.reloadRows(at: [indexPath], with: .fade)
+        }
+    }
 
     //https://stackoverflow.com/questions/27508771/core-data-many-to-many-relationship
     //https://stackoverflow.com/questions/24146524/setting-an-nsmanagedobject-relationship-in-swift/24146727#24146727

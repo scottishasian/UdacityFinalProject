@@ -32,7 +32,7 @@ extension DataManager {
         ]
         
         for ingredient in baseIngredients {
-            let ingredientsList = NSEntityDescription.insertNewObject(forEntityName: "Ingredients", into: context) as? Ingredients
+            let ingredientsList = NSEntityDescription.insertNewObject(forEntityName: "Ingredients", into: persistedCOntext) as? Ingredients
             ingredientsList?.name = ingredient.name
             print(ingredientsList!)
         }
