@@ -11,4 +11,17 @@ import CoreData
 
 extension Cocktail {
     
+    static let name = "Cocktails"
+    
+    convenience init(name: String, measurements: String, information: String, context: NSManagedObjectContext) {
+        if let savedEntity = NSEntityDescription.entity(forEntityName: Ingredients.name, in: context) {
+            self.init(entity: savedEntity, insertInto: context)
+            self.name = name
+            self.measurments = measurements
+            self.information = information
+        } else {
+            fatalError("Entity name not found")
+        }
+    }
+    
 }

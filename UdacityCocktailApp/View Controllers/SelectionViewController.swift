@@ -79,8 +79,9 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let ingredients = fetchResultController.fetchedObjects else {return 0}
-        return ingredients.count
+        //guard let ingredients = fetchResultController.fetchedObjects else {return 0}
+        //return ingredients.count
+        return ingredientsData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

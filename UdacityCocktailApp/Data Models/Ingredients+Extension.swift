@@ -13,10 +13,11 @@ extension Ingredients {
     
     static let name = "Ingredients"
     
-    convenience init(name: String, context: NSManagedObjectContext) {
+    convenience init(name: String, reference: NSSet, context: NSManagedObjectContext) {
         if let savedEntity = NSEntityDescription.entity(forEntityName: Ingredients.name, in: context) {
             self.init(entity: savedEntity, insertInto: context)
             self.name = name
+            self.reference = reference
         } else {
             fatalError("Entity name not found")
         }

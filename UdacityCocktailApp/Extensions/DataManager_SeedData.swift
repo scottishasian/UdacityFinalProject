@@ -64,5 +64,31 @@ extension DataManager {
 extension DataManager {
     
     //Cocktails seed data
+    //Refactor this method so it can be re-used.
+    public func seedCocktails() {
+        
+        let cocktailList = [
+            (name: "Mojito", measurements: "50ml Rum, 8 Mint leaves, 15ml Gomme, 25ml Lime", information: "Muddle the lime, sugar and mint, then stir in the rum over crushed ice. Finish with Soda",  ingredientReference: 1),
+            (name: "Old Fashioned", measurements: "50ml Bourbon or Rum, 1 sugar cube, 3 dashes Orange bitters, 3 dashes Angostura bitters", information: "Muddle the sugar and bitters into a treacle, then stir in the bourbon/rum over ice.",  ingredientReference: 2),
+            (name: "Paloma", measurements: "50ml Tequila, 12.5ml Lime Juice, 75ml Grapefruit Juice/Soda, 12.5ml Agave, salt rim", information: "Build and stir in glass over ice.",  ingredientReference: 3),
+            (name: "Whisky Mac", measurements: "50ml Whisky, 25ml Ginger Wine", information: "Build and stir in glass over ice.",  ingredientReference: 4),
+            (name: "Daiquiri", measurements: "50ml Rum, 12.5ml Cointreau, 12.5ml Lime", information: "Add to shaker then double strain into glass.",  ingredientReference: 5),
+        ]
+        
+        for cocktail in cocktailList {
+            let cocktailList = NSEntityDescription.insertNewObject(forEntityName: "Cocktail", into: context) as? Cocktail
+            cocktailList?.name = cocktail.name
+            //cocktailList?.measurments = cocktail.
+            //cocktailList?.ingredientReference =
+            //cocktailList?.information =
+            print(cocktailList!)
+        }
+        
+        do {
+            try context.save()
+        } catch _ {
+            
+        }
+    }
     
 }
