@@ -46,6 +46,7 @@ class SelectionViewController: UIViewController {
         let toggle = ingredientsTableView.isHidden
         animateDropDown(toggle: toggle)
         DataManager.sharedInstance().printIngredients()
+        ingredientsTableView.reloadData()
 
     }
     
@@ -101,9 +102,9 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //guard let ingredients = fetchResultController.fetchedObjects else {return 0}
-        //return ingredients.count
-        return (fetchResultController.fetchedObjects?.count)!
+        let arrayCount = fetchResultController.fetchedObjects
+        //print("There are: \(arrayCount?.count)")
+        return arrayCount!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -116,6 +117,9 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Did select \(ingredientsList[indexPath.row])")
+        let cell = ingredientsTableView.cellForRow(at: indexPath)
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "cocktailListSegue", sender: cell)
     }
 }
 

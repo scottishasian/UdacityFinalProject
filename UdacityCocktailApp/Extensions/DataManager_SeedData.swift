@@ -16,18 +16,18 @@ extension DataManager {
     public func seedIngredients() {
         
         let baseIngredients = [
-            (name: "Bourbon", reference: 7),
-            (name: "Campari", reference: 9),
-            (name: "Cointrieu", reference: 1),
-            (name: "Gin", reference: 3),
-            (name: "Lemon", reference: 12),
-            (name: "Lime", reference: 11),
-            (name: "Mescal", reference: 8),
-            (name: "Rum", reference: 4),
-            (name: "Tequila", reference: 5),
+            (name: "Bourbon", reference: 1),
+            (name: "Campari", reference: 2),
+            (name: "Cointrieu", reference: 3),
+            (name: "Gin", reference: 4),
+            (name: "Lemon", reference: 5),
+            (name: "Lime", reference: 6),
+            (name: "Mescal", reference: 7),
+            (name: "Rum", reference: 8),
+            (name: "Tequila", reference: 9),
             (name: "Vermouth", reference: 10),
-            (name: "Vodka", reference: 2),
-            (name: "Whisky", reference: 6)
+            (name: "Vodka", reference: 11),
+            (name: "Whisky", reference: 12)
 
         ]
         
