@@ -68,6 +68,12 @@ class CocktailTableViewController: UITableViewController {
         cell.textLabel?.text = cocktail.name
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = cocktailList.cellForRow(at: indexPath)
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "cocktailInformationSegue", sender: cell)
+    }
 
 
 }

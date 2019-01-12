@@ -115,7 +115,7 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Did select \(ingredientsList[indexPath.row])")
+        //print("Did select \(ingredientsList[indexPath.row])")
         let cell = ingredientsTableView.cellForRow(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "cocktailListSegue", sender: cell)
