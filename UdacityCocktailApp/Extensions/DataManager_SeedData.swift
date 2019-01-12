@@ -78,9 +78,9 @@ extension DataManager {
         for cocktail in cocktailList {
             let cocktailList = NSEntityDescription.insertNewObject(forEntityName: "Cocktail", into: context) as? Cocktail
             cocktailList?.name = cocktail.name
-            //cocktailList?.measurments = cocktail.
-            //cocktailList?.ingredientReference =
-            //cocktailList?.information =
+            cocktailList?.measurments = cocktail.measurements
+            //cocktailList?.ingredientReference = cocktail.ingredientReference
+            cocktailList?.information = cocktail.information
             print(cocktailList!)
         }
         
