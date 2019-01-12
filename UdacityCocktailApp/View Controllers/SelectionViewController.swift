@@ -15,12 +15,13 @@ class SelectionViewController: UIViewController {
     @IBOutlet weak var ingredientsTableView: UITableView!
     
     var fetchResultController : NSFetchedResultsController<Ingredients>!
-    var ingredientsData = [Ingredients]()
+    //var ingredientsData = [Ingredients]()
     var ingredientsList = ["Rum", "Tequila", "Whisky", "Vodka"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ingredientsTableView.dataSource = self
+        ingredientsTableView.delegate = self
         ingredientsTableView.isHidden = true
         DataManager.sharedInstance().seedIngredients()
         fetchIngredientsList()
@@ -44,7 +45,7 @@ class SelectionViewController: UIViewController {
     @IBAction func dropDownTapped(_ sender: Any) {
         let toggle = ingredientsTableView.isHidden
         animateDropDown(toggle: toggle)
-        //DataManager.sharedInstance().printIngredients()
+        DataManager.sharedInstance().printIngredients()
 
     }
     
@@ -67,7 +68,7 @@ class SelectionViewController: UIViewController {
         let primarySortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [primarySortDescriptor]
         
-        fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DataManager.sharedInstance().context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DataManager.sharedInstance().context, sectionNameKeyPath: nil, cacheName: "ingredients")
         fetchResultController.delegate = self
         
         var error: NSError?
@@ -80,11 +81,21 @@ class SelectionViewController: UIViewController {
         if let error = error {
             print("\(error)")
         }
-        
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // If this is a NotesListViewController, we'll configure its `Notebook`
+        if let vc = segue.destination as? CocktailTableViewController {
+//            if let indexPath = tableView.indexPathForSelectedRow {
+//                //vc.notebook = notebook(at: indexPath)
+//                vc.notebook = fetchedResultController.object(at: indexPath)
+//                //Passing core data stack to Notes.
+//                vc.dataController = dataController
+            }
+        print("Ingredient tapped")
+        }
+    
 }
-
 
 extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -92,7 +103,7 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //guard let ingredients = fetchResultController.fetchedObjects else {return 0}
         //return ingredients.count
-        return ingredientsData.count
+        return (fetchResultController.fetchedObjects?.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

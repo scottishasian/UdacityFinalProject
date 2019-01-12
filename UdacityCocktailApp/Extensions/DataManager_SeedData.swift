@@ -16,25 +16,25 @@ extension DataManager {
     public func seedIngredients() {
         
         let baseIngredients = [
+            (name: "Bourbon", reference: 7),
+            (name: "Campari", reference: 9),
             (name: "Cointrieu", reference: 1),
-            (name: "Vodka", reference: 2),
             (name: "Gin", reference: 3),
+            (name: "Lemon", reference: 12),
+            (name: "Lime", reference: 11),
+            (name: "Mescal", reference: 8),
             (name: "Rum", reference: 4),
             (name: "Tequila", reference: 5),
-            (name: "Whisky", reference: 6),
-            (name: "Bourbon", reference: 7),
-            (name: "Mescal", reference: 8),
-            (name: "Campari", reference: 9),
             (name: "Vermouth", reference: 10),
-            (name: "Lime", reference: 11),
-            (name: "Lemon", reference: 12)
-            
+            (name: "Vodka", reference: 2),
+            (name: "Whisky", reference: 6)
+
         ]
         
         for ingredient in baseIngredients {
             let ingredientsList = NSEntityDescription.insertNewObject(forEntityName: "Ingredients", into: persistedCOntext) as? Ingredients
             ingredientsList?.name = ingredient.name
-            print(ingredientsList!)
+            //print(ingredientsList!)
         }
         
         do {
