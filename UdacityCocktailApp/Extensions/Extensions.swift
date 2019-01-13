@@ -25,6 +25,14 @@ extension UIViewController {
         }
     }
     
+    func saveData() {
+        do {
+            try DataManager.sharedInstance().saveContext()
+        } catch {
+            showInfo(withTitle: "Error", withMessage: "Context saving error: \(error)")
+        }
+    }
+    
     
     //https://stackoverflow.com/questions/25945324/swift-open-link-in-safari
     func openLink(_ url: String) {

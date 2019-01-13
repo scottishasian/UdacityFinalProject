@@ -37,18 +37,25 @@ class AddCocktailViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func saveCocktail(_ sender: Any) {
-        let cocktail = cocktailName.text
+        let newCocktailName = cocktailName.text
         let firstIngredient = ingredient1.text
         let secondIngredient = ingredient2.text
         let thirdIngredient = ingredient3.text
         let measurements = measurementsTextField.text
         let information = cocktailInformationTextField.text
         
-        if (cocktail?.isEmpty)! || (firstIngredient?.isEmpty)! || (secondIngredient?.isEmpty)! {
+        if (newCocktailName?.isEmpty)! || (firstIngredient?.isEmpty)! || (secondIngredient?.isEmpty)! {
             showInfo(withMessage: "A cocktail needs a name and at least two ingredients")
             return
         }
         print("Saving cocktail")
+        
+        let newCocktail = Cocktail(context: DataManager.sharedInstance().context)
+        newCocktail.name = newCocktailName
+        newCocktail.measurments = measurements
+        newCocktail.information = information
+        
+        saveData() 
         //Check if cocktail name is already in database.
         
     }

@@ -18,6 +18,11 @@ class CocktailTableViewController: UIViewController {
     var cocktailInformationToPass:String!
     var cocktailMeasurementsToPass:String!
     
+    var selectedIndexes = [IndexPath]()
+    var insertedIndexPaths: [IndexPath]!
+    var deletedIndexPaths: [IndexPath]!
+    var updatedIndexPaths: [IndexPath]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         cocktailList.dataSource = self
@@ -97,14 +102,3 @@ extension CocktailTableViewController: UITableViewDelegate, UITableViewDataSourc
 
 }
 
-extension CocktailTableViewController: NSFetchedResultsControllerDelegate {
-    
-    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        cocktailList.beginUpdates()
-    }
-    
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        cocktailList.endUpdates()
-    }
-    
-}

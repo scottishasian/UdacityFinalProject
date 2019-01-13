@@ -83,19 +83,7 @@ class SelectionViewController: UIViewController {
             print("\(error)")
         }
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // If this is a NotesListViewController, we'll configure its `Notebook`
-//        if let vc = segue.destination as? CocktailTableViewController {
-////            if let indexPath = tableView.indexPathForSelectedRow {
-////                //vc.notebook = notebook(at: indexPath)
-////                vc.notebook = fetchedResultController.object(at: indexPath)
-////                //Passing core data stack to Notes.
-////                vc.dataController = dataController
-//            }
-//        print("Ingredient tapped")
-//        }
-    
+
 }
 
 extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
@@ -120,6 +108,18 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
         print("tapped: \(ingredient.name)")
         performSegue(withIdentifier: "cocktailListSegue", sender: cell)
     }
+    
+    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //        // If this is a NotesListViewController, we'll configure its `Notebook`
+    //        if let vc = segue.destination as? CocktailTableViewController {
+    ////            if let indexPath = tableView.indexPathForSelectedRow {
+    ////                //vc.notebook = notebook(at: indexPath)
+    ////                vc.notebook = fetchedResultController.object(at: indexPath)
+    ////                //Passing core data stack to Notes.
+    ////                vc.dataController = dataController
+    //            }
+    //        print("Ingredient tapped")
+    //        }
 }
 
 

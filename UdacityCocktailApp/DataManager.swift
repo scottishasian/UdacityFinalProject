@@ -77,3 +77,29 @@ class DataManager {
     }
 }
 
+extension DataManager {
+    
+    //saving context
+    //https://www.hackingwithswift.com/read/38/3/adding-core-data-to-our-project-nspersistentcontainer
+    
+    func saveContext() throws {
+        context.performAndWait {
+            if self.context.hasChanges {
+                do {
+                    try self.context.save()
+                } catch {
+                    print("\(error): Unable to save context.")
+                }
+                
+                //Run background saving.
+                self.persistedCOntext.perform {
+                    do {
+                        try self.persistedCOntext.save()
+                    } catch {
+                        print("\(error): Unable to save persisted context.")
+                    }
+                }
+            }
+        }
+    }
+}
