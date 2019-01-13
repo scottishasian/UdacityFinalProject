@@ -45,7 +45,7 @@ class SelectionViewController: UIViewController {
     @IBAction func dropDownTapped(_ sender: Any) {
         let toggle = ingredientsTableView.isHidden
         animateDropDown(toggle: toggle)
-        DataManager.sharedInstance().printIngredients()
+        //DataManager.sharedInstance().printIngredients()
         ingredientsTableView.reloadData()
 
     }
@@ -84,17 +84,17 @@ class SelectionViewController: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // If this is a NotesListViewController, we'll configure its `Notebook`
-        if let vc = segue.destination as? CocktailTableViewController {
-//            if let indexPath = tableView.indexPathForSelectedRow {
-//                //vc.notebook = notebook(at: indexPath)
-//                vc.notebook = fetchedResultController.object(at: indexPath)
-//                //Passing core data stack to Notes.
-//                vc.dataController = dataController
-            }
-        print("Ingredient tapped")
-        }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // If this is a NotesListViewController, we'll configure its `Notebook`
+//        if let vc = segue.destination as? CocktailTableViewController {
+////            if let indexPath = tableView.indexPathForSelectedRow {
+////                //vc.notebook = notebook(at: indexPath)
+////                vc.notebook = fetchedResultController.object(at: indexPath)
+////                //Passing core data stack to Notes.
+////                vc.dataController = dataController
+//            }
+//        print("Ingredient tapped")
+//        }
     
 }
 
@@ -103,7 +103,6 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let arrayCount = fetchResultController.fetchedObjects
-        //print("There are: \(arrayCount?.count)")
         return arrayCount!.count
     }
     
@@ -115,9 +114,10 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //print("Did select \(ingredientsList[indexPath.row])")
         let cell = ingredientsTableView.cellForRow(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
+        let ingredient = fetchResultController.object(at: indexPath)
+        print("tapped: \(ingredient.name)")
         performSegue(withIdentifier: "cocktailListSegue", sender: cell)
     }
 }

@@ -81,7 +81,7 @@ extension DataManager {
             cocktailList?.measurments = cocktail.measurements
             //cocktailList?.ingredientReference = cocktail.ingredientReference
             cocktailList?.information = cocktail.information
-            print(cocktailList!)
+            //print(cocktailList!)
         }
         
         do {

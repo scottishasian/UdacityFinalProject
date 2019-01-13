@@ -9,11 +9,12 @@
 import UIKit
 import CoreData
 
-class CocktailTableViewController: UITableViewController {
+class CocktailTableViewController: UIViewController {
 
     @IBOutlet var cocktailList: UITableView!
     
     var fetchResultController : NSFetchedResultsController<Cocktail>!
+    var cocktailNameToPass:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +35,7 @@ class CocktailTableViewController: UITableViewController {
     
     func fetchCocktailsList() {
         
-        //let fetchRequest = NSFetchRequest<Ingredients>(entityName: "Ingredients")
+        //Needs to change to draw from joining table.
         let fetchRequest: NSFetchRequest<Cocktail> = Cocktail.fetchRequest()
         let primarySortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [primarySortDescriptor]
@@ -53,26 +54,41 @@ class CocktailTableViewController: UITableViewController {
             print("\(error)")
         }
     }
+    
+}
 
 
     // MARK: - Table view data source
+extension CocktailTableViewController: UITableViewDelegate, UITableViewDataSource {
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let arrayCount = fetchResultController.fetchedObjects
         return arrayCount!.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cocktailCell", for: indexPath)
         let cocktail = fetchResultController.object(at: indexPath)
         cell.textLabel?.text = cocktail.name
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = cocktailList.cellForRow(at: indexPath)
-        tableView.deselectRow(at: indexPath, animated: true)
+        let cocktail = fetchResultController.object(at: indexPath)
+//        tableView.deselectRow(at: indexPath, animated: true)
+//        let destinationVC = CocktailInformationViewController()
+//        destinationVC.sentName = cocktail.name!
+        cocktailNameToPass = cocktail.name
+        print("tapped: \(cocktail.name)")
         performSegue(withIdentifier: "cocktailInformationSegue", sender: cell)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "cocktailInformationSegue") {
+            var viewController = segue.destination as! CocktailInformationViewController
+            viewController.sentName = cocktailNameToPass
+        }
     }
 
 

@@ -378,13 +378,13 @@
         <!--Cocktail Information View Controller-->
         <scene sceneID="vmn-j1-Tru">
             <objects>
-                <viewController id="HEK-CE-YpS" customClass="CocktailInformationViewController" customModule="UdacityCocktailApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CocktailInformation" id="HEK-CE-YpS" customClass="CocktailInformationViewController" customModule="UdacityCocktailApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nIL-il-d8i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6OV-hu-FZ8">
-                                <rect key="frame" x="31" y="419.5" width="134" height="65"/>
+                                <rect key="frame" x="31" y="497" width="134" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="sM8-IW-pVV"/>
                                     <constraint firstAttribute="width" constant="134" id="vK0-TZ-a3e"/>
@@ -396,13 +396,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="La6-q3-MDf">
-                                <rect key="frame" x="127" y="152" width="121" height="21"/>
+                                <rect key="frame" x="127" y="152.5" width="121" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlW-9A-I9Z">
-                                <rect key="frame" x="93.5" y="220" width="188" height="20.5"/>
+                                <rect key="frame" x="93.5" y="220.5" width="188" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="188" id="G2q-54-pT5"/>
                                     <constraint firstAttribute="height" constant="130" id="lfN-f8-xbT"/>
@@ -412,7 +412,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPq-yG-9tl">
-                                <rect key="frame" x="105" y="261.5" width="165" height="53"/>
+                                <rect key="frame" x="105" y="371.5" width="165" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="165" id="20h-Hg-Eps"/>
                                     <constraint firstAttribute="height" constant="53" id="E44-Bi-fup"/>
@@ -422,7 +422,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="G45-mq-wsz">
-                                <rect key="frame" x="236" y="431.5" width="103" height="40"/>
+                                <rect key="frame" x="236" y="509" width="103" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="103" id="Dgm-C0-m0M"/>
                                     <constraint firstAttribute="height" constant="40" id="Ete-hP-CEH"/>
