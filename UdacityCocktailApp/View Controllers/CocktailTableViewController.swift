@@ -31,14 +31,6 @@ class CocktailTableViewController: UIViewController {
         cocktailList.delegate = self
         fetchCocktailsList()
         arrayCount = fetchResultController.fetchedObjects
-//        if arrayCount.count == 0 {
-//            //Doesn't load data on intial view.
-//            DataManager.sharedInstance().seedCocktails()
-//            fetchCocktailsList()
-//            arrayCount = fetchResultController.fetchedObjects
-//            cocktailList.reloadData()
-//            print(arrayCount.count)
-//        }
         
     }
     
@@ -60,16 +52,16 @@ class CocktailTableViewController: UIViewController {
         let primarySortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [primarySortDescriptor]
         
-        //let referencePredicate = NSPredicate(format: "ingredientReference == %@", ingredientsReference!)
-        //let allCocktails = (try! DataManager.sharedInstance().context.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>)) as! [Cocktail]
+        let referencePredicate = NSPredicate(format: "ingredientReference == %@", ingredientsReference!)
+        let allCocktails = (try! DataManager.sharedInstance().context.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>)) as! [Cocktail]
     
-//        for cocktail in allCocktails {
-//            let filteredCocktails = cocktail.ingredientReference?.filtered(using: referencePredicate)
-//            if (filteredCocktails?.count)! > 0 {
-//                let listObject = filteredCocktails
-//                print("Ingredient Name: \(cocktail.name)", terminator: "")
-//            }
-//        }
+        for cocktail in allCocktails {
+            let filteredCocktails = cocktail.ingredientReference?.filtered(using: referencePredicate)
+            if (filteredCocktails?.count)! > 0 {
+                let listObject = filteredCocktails
+                print("Ingredient Name: \(cocktail.name)", terminator: "")
+            }
+        }
         
         fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DataManager.sharedInstance().context, sectionNameKeyPath: nil, cacheName: "cocktails")
         fetchResultController.delegate = self

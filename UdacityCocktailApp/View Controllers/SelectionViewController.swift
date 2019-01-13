@@ -112,12 +112,12 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
         performSegue(withIdentifier: "cocktailListSegue", sender: cell)
     }
     
-//        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//            if(segue.identifier == "cocktailListSegue") {
-//                let viewController = segue.destination as! CocktailTableViewController
-//                viewController.ingredientsReference = ingredientReferenceToPass
-//            }
-//        }
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if(segue.identifier == "cocktailListSegue") {
+                let viewController = segue.destination as! CocktailTableViewController
+                viewController.ingredientsReference = ingredientReferenceToPass
+            }
+        }
 }
 
 
