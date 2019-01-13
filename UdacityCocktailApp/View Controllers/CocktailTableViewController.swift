@@ -31,11 +31,14 @@ class CocktailTableViewController: UIViewController {
         cocktailList.delegate = self
         fetchCocktailsList()
         arrayCount = fetchResultController.fetchedObjects
-        if arrayCount.count == 0 && cocktailList.visibleCells.isEmpty{
+        if arrayCount.count == 0 {
+            //Doesn't load data on intial view.
             DataManager.sharedInstance().seedCocktails()
+            fetchCocktailsList()
+            arrayCount = fetchResultController.fetchedObjects
             cocktailList.reloadData()
+            print(arrayCount.count)
         }
-        //DataManager.sharedInstance().seedCocktails()
         
     }
     
@@ -85,8 +88,6 @@ class CocktailTableViewController: UIViewController {
     }
     
 }
-
-
     // MARK: - Table view data source
 extension CocktailTableViewController: UITableViewDelegate, UITableViewDataSource {
 
@@ -99,7 +100,8 @@ extension CocktailTableViewController: UITableViewDelegate, UITableViewDataSourc
         let cell = tableView.dequeueReusableCell(withIdentifier: "cocktailCell", for: indexPath)
         let cocktail = arrayCount![indexPath.row]
         cell.textLabel?.text = cocktail.name
-        return cell }
+        return cell
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = cocktailList.cellForRow(at: indexPath)
