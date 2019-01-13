@@ -31,14 +31,14 @@ class CocktailTableViewController: UIViewController {
         cocktailList.delegate = self
         fetchCocktailsList()
         arrayCount = fetchResultController.fetchedObjects
-        if arrayCount.count == 0 {
-            //Doesn't load data on intial view.
-            DataManager.sharedInstance().seedCocktails()
-            fetchCocktailsList()
-            arrayCount = fetchResultController.fetchedObjects
-            cocktailList.reloadData()
-            print(arrayCount.count)
-        }
+//        if arrayCount.count == 0 {
+//            //Doesn't load data on intial view.
+//            DataManager.sharedInstance().seedCocktails()
+//            fetchCocktailsList()
+//            arrayCount = fetchResultController.fetchedObjects
+//            cocktailList.reloadData()
+//            print(arrayCount.count)
+//        }
         
     }
     

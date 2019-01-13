@@ -26,11 +26,9 @@ class SelectionViewController: UIViewController {
         ingredientsTableView.delegate = self
         ingredientsTableView.isHidden = true
         DataManager.sharedInstance().seedIngredients()
+        DataManager.sharedInstance().seedCocktails()
         fetchIngredientsList()
         arrayCount = fetchResultController.fetchedObjects
-//        if arrayCount.count == 0 {
-//            DataManager.sharedInstance().seedIngredients()
-//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
