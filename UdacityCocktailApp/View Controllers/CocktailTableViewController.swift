@@ -29,9 +29,14 @@ class CocktailTableViewController: UIViewController {
         super.viewDidLoad()
         cocktailList.dataSource = self
         cocktailList.delegate = self
-        DataManager.sharedInstance().seedCocktails()
         fetchCocktailsList()
         arrayCount = fetchResultController.fetchedObjects
+        if arrayCount.count == 0 && cocktailList.visibleCells.isEmpty{
+            DataManager.sharedInstance().seedCocktails()
+            cocktailList.reloadData()
+        }
+        //DataManager.sharedInstance().seedCocktails()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

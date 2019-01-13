@@ -18,6 +18,7 @@ class SelectionViewController: UIViewController {
     //var ingredientsData = [Ingredients]()
     var ingredientsList = ["Rum", "Tequila", "Whisky", "Vodka"]
     var ingredientReferenceToPass: NSSet = []
+    var arrayCount : [Ingredients]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,10 @@ class SelectionViewController: UIViewController {
         ingredientsTableView.isHidden = true
         DataManager.sharedInstance().seedIngredients()
         fetchIngredientsList()
-        // Do any additional setup after loading the view.
+        arrayCount = fetchResultController.fetchedObjects
+//        if arrayCount.count == 0 {
+//            DataManager.sharedInstance().seedIngredients()
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,7 +95,6 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let arrayCount = fetchResultController.fetchedObjects
         return arrayCount!.count
     }
     
