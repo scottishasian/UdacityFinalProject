@@ -23,6 +23,7 @@ class CocktailTableViewController: UIViewController {
     var insertedIndexPaths: [IndexPath]!
     var deletedIndexPaths: [IndexPath]!
     var updatedIndexPaths: [IndexPath]!
+    var arrayCount:[Cocktail]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,7 @@ class CocktailTableViewController: UIViewController {
         cocktailList.delegate = self
         DataManager.sharedInstance().seedCocktails()
         fetchCocktailsList()
+        arrayCount = fetchResultController.fetchedObjects
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,18 +52,16 @@ class CocktailTableViewController: UIViewController {
         let primarySortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [primarySortDescriptor]
         
-        let referencePredicate = NSPredicate(format: "ingredientReference == %@", ingredientsReference!)
-        let allCocktails = (try! DataManager.sharedInstance().context.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>)) as! [Cocktail]
+        //let referencePredicate = NSPredicate(format: "ingredientReference == %@", ingredientsReference!)
+        //let allCocktails = (try! DataManager.sharedInstance().context.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>)) as! [Cocktail]
     
-        for cocktail in allCocktails {
-            let filteredCocktails = cocktail.ingredientReference?.filtered(using: referencePredicate)
-            if (filteredCocktails?.count)! > 0 {
-                let listObject = filteredCocktails
-                print("Ingredient Name: \(cocktail.name)", terminator: "")
-            }
-            
-            
-        }
+//        for cocktail in allCocktails {
+//            let filteredCocktails = cocktail.ingredientReference?.filtered(using: referencePredicate)
+//            if (filteredCocktails?.count)! > 0 {
+//                let listObject = filteredCocktails
+//                print("Ingredient Name: \(cocktail.name)", terminator: "")
+//            }
+//        }
         
         fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DataManager.sharedInstance().context, sectionNameKeyPath: nil, cacheName: "cocktails")
         fetchResultController.delegate = self
@@ -86,16 +86,15 @@ class CocktailTableViewController: UIViewController {
 extension CocktailTableViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let arrayCount = fetchResultController.fetchedObjects
+        //let arrayCount = fetchResultController.fetchedObjects
         return arrayCount!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cocktailCell", for: indexPath)
-        let cocktail = fetchResultController.object(at: indexPath)
+        let cocktail = arrayCount![indexPath.row]
         cell.textLabel?.text = cocktail.name
-        return cell
-    }
+        return cell }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = cocktailList.cellForRow(at: indexPath)

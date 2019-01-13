@@ -106,17 +106,17 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = ingredientsTableView.cellForRow(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
         let ingredient = fetchResultController.object(at: indexPath)
-        ingredientReferenceToPass = ingredient.reference!
+        //ingredientReferenceToPass = ingredient.reference!
         print("tapped: \(ingredient.name)")
         performSegue(withIdentifier: "cocktailListSegue", sender: cell)
     }
     
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if(segue.identifier == "cocktailListSegue") {
-                let viewController = segue.destination as! CocktailTableViewController
-                viewController.ingredientsReference = ingredientReferenceToPass
-            }
-        }
+//        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//            if(segue.identifier == "cocktailListSegue") {
+//                let viewController = segue.destination as! CocktailTableViewController
+//                viewController.ingredientsReference = ingredientReferenceToPass
+//            }
+//        }
 }
 
 
