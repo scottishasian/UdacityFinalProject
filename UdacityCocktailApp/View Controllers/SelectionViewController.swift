@@ -17,6 +17,7 @@ class SelectionViewController: UIViewController {
     var fetchResultController : NSFetchedResultsController<Ingredients>!
     //var ingredientsData = [Ingredients]()
     var ingredientsList = ["Rum", "Tequila", "Whisky", "Vodka"]
+    var ingredientReferenceToPass: NSSet = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,21 +106,17 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = ingredientsTableView.cellForRow(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
         let ingredient = fetchResultController.object(at: indexPath)
+        ingredientReferenceToPass = ingredient.reference!
         print("tapped: \(ingredient.name)")
         performSegue(withIdentifier: "cocktailListSegue", sender: cell)
     }
     
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        // If this is a NotesListViewController, we'll configure its `Notebook`
-    //        if let vc = segue.destination as? CocktailTableViewController {
-    ////            if let indexPath = tableView.indexPathForSelectedRow {
-    ////                //vc.notebook = notebook(at: indexPath)
-    ////                vc.notebook = fetchedResultController.object(at: indexPath)
-    ////                //Passing core data stack to Notes.
-    ////                vc.dataController = dataController
-    //            }
-    //        print("Ingredient tapped")
-    //        }
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if(segue.identifier == "cocktailListSegue") {
+                let viewController = segue.destination as! CocktailTableViewController
+                viewController.ingredientsReference = ingredientReferenceToPass
+            }
+        }
 }
 
 

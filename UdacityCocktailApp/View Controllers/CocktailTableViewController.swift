@@ -17,6 +17,7 @@ class CocktailTableViewController: UIViewController {
     var cocktailNameToPass:String!
     var cocktailInformationToPass:String!
     var cocktailMeasurementsToPass:String!
+    var ingredientsReference: NSSet?
     
     var selectedIndexes = [IndexPath]()
     var insertedIndexPaths: [IndexPath]!
@@ -43,12 +44,28 @@ class CocktailTableViewController: UIViewController {
     func fetchCocktailsList() {
         
         //Needs to change to draw from joining table.
+        //https://stackoverflow.com/questions/15062860/fetching-data-using-join-table-in-coredata
+        
         let fetchRequest: NSFetchRequest<Cocktail> = Cocktail.fetchRequest()
         let primarySortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [primarySortDescriptor]
         
+        let referencePredicate = NSPredicate(format: "ingredientReference == %@", ingredientsReference!)
+        let allCocktails = (try! DataManager.sharedInstance().context.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>)) as! [Cocktail]
+    
+        for cocktail in allCocktails {
+            let filteredCocktails = cocktail.ingredientReference?.filtered(using: referencePredicate)
+            if (filteredCocktails?.count)! > 0 {
+                let listObject = filteredCocktails
+                print("Ingredient Name: \(cocktail.name)", terminator: "")
+            }
+            
+            
+        }
+        
         fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: DataManager.sharedInstance().context, sectionNameKeyPath: nil, cacheName: "cocktails")
         fetchResultController.delegate = self
+        
         
         var error: NSError?
         do {
