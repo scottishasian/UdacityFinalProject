@@ -15,6 +15,8 @@ class CocktailTableViewController: UIViewController {
     
     var fetchResultController : NSFetchedResultsController<Cocktail>!
     var cocktailNameToPass:String!
+    var cocktailInformationToPass:String!
+    var cocktailMeasurementsToPass:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,18 +78,19 @@ extension CocktailTableViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = cocktailList.cellForRow(at: indexPath)
         let cocktail = fetchResultController.object(at: indexPath)
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        let destinationVC = CocktailInformationViewController()
-//        destinationVC.sentName = cocktail.name!
         cocktailNameToPass = cocktail.name
+        cocktailMeasurementsToPass = cocktail.measurments
+        cocktailInformationToPass = cocktail.information
         print("tapped: \(cocktail.name)")
         performSegue(withIdentifier: "cocktailInformationSegue", sender: cell)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "cocktailInformationSegue") {
-            var viewController = segue.destination as! CocktailInformationViewController
+            let viewController = segue.destination as! CocktailInformationViewController
             viewController.sentName = cocktailNameToPass
+            viewController.sentInformation = cocktailInformationToPass
+            viewController.sentMeasurements = cocktailMeasurementsToPass
         }
     }
 

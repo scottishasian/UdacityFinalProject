@@ -20,10 +20,14 @@ class CocktailInformationViewController: UIViewController {
     var cocktail : Cocktail!
     var fetchResultController: NSFetchedResultsController<Cocktail>!
     var sentName: String = ""
+    var sentMeasurements: String = ""
+    var sentInformation: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cocktailName?.text = sentName
+        cocktailMeasurements?.text = sentMeasurements
+        cocktailInformation?.text = sentInformation
         //setupFetchedResultController()
 
         // Do any additional setup after loading the view.
