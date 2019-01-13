@@ -25,10 +25,13 @@ class SelectionViewController: UIViewController {
         ingredientsTableView.dataSource = self
         ingredientsTableView.delegate = self
         ingredientsTableView.isHidden = true
-        DataManager.sharedInstance().seedIngredients()
-        DataManager.sharedInstance().seedCocktails()
+//        DataManager.sharedInstance().seedIngredients()
+//        DataManager.sharedInstance().seedCocktails()
+        checkIfFirstLaunch()
         fetchIngredientsList()
         arrayCount = fetchResultController.fetchedObjects
+        UserDefaults.standard.set(true, forKey: "hasDataInTableIngredients")
+        UserDefaults.standard.set(true, forKey: "hasDataInTableCocktails")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,6 +47,20 @@ class SelectionViewController: UIViewController {
     //https://stackoverflow.com/questions/24146524/setting-an-nsmanagedobject-relationship-in-swift/24146727#24146727
     //https://stackoverflow.com/questions/29028574/ios-swift-how-to-store-array-with-core-data
     
+    func checkIfFirstLaunch() {
+        if UserDefaults.standard.bool(forKey: "hasLaunchedBefore") {
+            print("App has launched before")
+        } else {
+            print("This is the first launch ever!")
+            UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
+            UserDefaults.standard.set(false, forKey: "hasDataInTableIngredients")
+            UserDefaults.standard.set(false, forKey: "hasDataInTableCocktails")
+            DataManager.sharedInstance().seedIngredients()
+            DataManager.sharedInstance().seedCocktails()
+            saveData()
+            UserDefaults.standard.synchronize()
+        }
+    }
 
     @IBAction func dropDownTapped(_ sender: Any) {
         let toggle = ingredientsTableView.isHidden

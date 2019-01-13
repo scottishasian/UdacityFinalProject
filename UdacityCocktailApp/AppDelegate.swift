@@ -41,19 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func checkIfFirstLaunch() {
-        if UserDefaults.standard.bool(forKey: "hasLaunchedBefore") {
-            print("App has launched before")
-        } else {
-            print("This is the first launch ever!")
-            UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
-            UserDefaults.standard.set(false, forKey: "hasDataInTableIngredients")
-            UserDefaults.standard.set(false, forKey: "hasDataInTableCocktails")
-            DataManager.sharedInstance().seedIngredients()
-            DataManager.sharedInstance().seedCocktails()
-            UserDefaults.standard.synchronize()
-        }
-    }
 
 
 }

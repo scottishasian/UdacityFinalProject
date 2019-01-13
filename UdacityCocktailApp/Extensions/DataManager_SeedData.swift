@@ -38,9 +38,9 @@ extension DataManager {
         }
         
         do {
-            try context.save()
-        } catch _ {
-            
+            try DataManager.sharedInstance().saveContext()
+        } catch {
+            fatalError("\(error)")
         }
     }
     
@@ -85,9 +85,9 @@ extension DataManager {
         }
         
         do {
-            try context.save()
-        } catch _ {
-            
+            try DataManager.sharedInstance().saveContext()
+        } catch {
+            fatalError("\(error)")
         }
     }
     
