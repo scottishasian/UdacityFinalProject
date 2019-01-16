@@ -101,7 +101,8 @@ extension CocktailTableViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = cocktailList.cellForRow(at: indexPath)
-        let cocktail = fetchResultController.object(at: indexPath)
+        //let cocktail = fetchResultController.object(at: indexPath)
+        let cocktail = allCocktails![indexPath.row]
         cocktailNameToPass = cocktail.name
         cocktailMeasurementsToPass = cocktail.measurments
         cocktailInformationToPass = cocktail.information
