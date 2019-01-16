@@ -23,14 +23,14 @@ class CocktailTableViewController: UIViewController {
     var insertedIndexPaths: [IndexPath]!
     var deletedIndexPaths: [IndexPath]!
     var updatedIndexPaths: [IndexPath]!
-    var arrayCount:[Cocktail]!
+    var allCocktails:[Cocktail]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cocktailList.dataSource = self
         cocktailList.delegate = self
         fetchCocktailsList()
-        arrayCount = fetchResultController.fetchedObjects
+        allCocktails = fetchResultController.fetchedObjects
         cocktailList.reloadData()
         
     }
@@ -55,10 +55,9 @@ class CocktailTableViewController: UIViewController {
         fetchRequest.sortDescriptors = [primarySortDescriptor]
         
         let referencePredicate = NSPredicate(format: "ingredientReference == %@", ingredientsReference!)
-        let allCocktails = (try! DataManager.sharedInstance().context.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>)) as! [Cocktail]
-        arrayCount = allCocktails
+        allCocktails = (try! DataManager.sharedInstance().context.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>)) as! [Cocktail]
     
-        for cocktail in arrayCount {
+        for cocktail in allCocktails {
             let filteredCocktails = cocktail.ingredientReference?.filtered(using: referencePredicate)
             if (filteredCocktails?.count)! > 0 {
                 let listObject = filteredCocktails
@@ -90,12 +89,12 @@ extension CocktailTableViewController: UITableViewDelegate, UITableViewDataSourc
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //let arrayCount = fetchResultController.fetchedObjects
-        return arrayCount!.count
+        return allCocktails!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cocktailCell", for: indexPath)
-        let cocktail = arrayCount![indexPath.row]
+        let cocktail = allCocktails![indexPath.row]
         cell.textLabel?.text = cocktail.name
         return cell
     }
