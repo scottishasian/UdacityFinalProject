@@ -31,12 +31,14 @@ class CocktailTableViewController: UIViewController {
         cocktailList.delegate = self
         fetchCocktailsList()
         arrayCount = fetchResultController.fetchedObjects
+        cocktailList.reloadData()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        fetchCocktailsList()
+        cocktailList.reloadData()
         if let indexPath = cocktailList.indexPathForSelectedRow {
             cocktailList.deselectRow(at: indexPath, animated: false)
             cocktailList.reloadRows(at: [indexPath], with: .fade)
@@ -73,10 +75,12 @@ class CocktailTableViewController: UIViewController {
         } catch let fetchError as NSError {
             error = fetchError
         }
+        //cocktailList.reloadData()
         
         if let error = error {
             print("\(error)")
         }
+        
     }
     
 }

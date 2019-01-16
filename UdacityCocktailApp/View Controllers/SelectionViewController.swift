@@ -36,7 +36,7 @@ class SelectionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        ingredientsTableView.reloadData()
         if let indexPath = ingredientsTableView.indexPathForSelectedRow {
             ingredientsTableView.deselectRow(at: indexPath, animated: false)
             ingredientsTableView.reloadRows(at: [indexPath], with: .fade)
