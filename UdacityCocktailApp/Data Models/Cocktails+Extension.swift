@@ -13,12 +13,13 @@ extension Cocktail {
     
     static let name = "Cocktails"
     
-    convenience init(name: String, measurements: String, information: String, context: NSManagedObjectContext) {
+    convenience init(name: String, measurements: String, information: String, ingredientReference: NSSet, context: NSManagedObjectContext) {
         if let savedEntity = NSEntityDescription.entity(forEntityName: Ingredients.name, in: context) {
             self.init(entity: savedEntity, insertInto: context)
             self.name = name
             self.measurments = measurements
             self.information = information
+            self.ingredientReference = ingredientReference
         } else {
             fatalError("Entity name not found")
         }

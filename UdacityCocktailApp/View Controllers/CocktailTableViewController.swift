@@ -56,8 +56,9 @@ class CocktailTableViewController: UIViewController {
         
         let referencePredicate = NSPredicate(format: "ingredientReference == %@", ingredientsReference!)
         let allCocktails = (try! DataManager.sharedInstance().context.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>)) as! [Cocktail]
+        arrayCount = allCocktails
     
-        for cocktail in allCocktails {
+        for cocktail in arrayCount {
             let filteredCocktails = cocktail.ingredientReference?.filtered(using: referencePredicate)
             if (filteredCocktails?.count)! > 0 {
                 let listObject = filteredCocktails
