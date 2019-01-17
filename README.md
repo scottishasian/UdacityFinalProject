@@ -19,5 +19,5 @@ ingredients they will need and their measurements.
 ### To be done at a later date:
 * Filter cocktails by selected ingredient.
 * To show suggested brands and provide links to their websites.
-* To show on google maps where a user can find these cocktails.
+* To use mapKit to show where a user can find these cocktails.
 
