@@ -28,7 +28,6 @@ class AddCocktailViewController: UIViewController, UITextFieldDelegate {
         self.ingredient1.delegate = self
         self.ingredient2.delegate = self
         self.ingredient3.delegate = self
-        // Do any additional setup after loading the view.
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -56,7 +55,7 @@ class AddCocktailViewController: UIViewController, UITextFieldDelegate {
         newCocktail.information = information
         
         saveData() 
-        //Check if cocktail name is already in database.
+        // TODO: Check if cocktail name is already in database.
         
     }
     

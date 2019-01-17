@@ -47,7 +47,7 @@ class CocktailTableViewController: UIViewController {
     
     func fetchCocktailsList() {
         
-        //Needs to change to draw from joining table.
+        // TODO: draw from joining table and filter results
         //https://stackoverflow.com/questions/15062860/fetching-data-using-join-table-in-coredata
         
         let fetchRequest: NSFetchRequest<Cocktail> = Cocktail.fetchRequest()
@@ -75,7 +75,6 @@ class CocktailTableViewController: UIViewController {
         } catch let fetchError as NSError {
             error = fetchError
         }
-        //cocktailList.reloadData()
         
         if let error = error {
             print("\(error)")
@@ -88,7 +87,6 @@ class CocktailTableViewController: UIViewController {
 extension CocktailTableViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //let arrayCount = fetchResultController.fetchedObjects
         return allCocktails!.count
     }
     

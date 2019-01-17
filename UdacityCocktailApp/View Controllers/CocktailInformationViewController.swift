@@ -28,26 +28,15 @@ class CocktailInformationViewController: UIViewController {
         cocktailName?.text = sentName
         cocktailMeasurements?.text = sentMeasurements
         cocktailInformation?.text = sentInformation
-        //setupFetchedResultController()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func loadCocktailInformation() {
         
     }
-    
-//    func setupFetchedResultController() {
-//        let fetchRequest : NSFetchRequest<Cocktail> = Cocktail.fetchRequest()
-//        let prediate = NSPredicate(format: "cocktail == %@", cocktail)
-//        fetchRequest.predicate = prediate
-//        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-//    }
     
     //Add weather API and "should I go out" page?
     //https://stackoverflow.com/questions/35753949/swift-how-to-get-openweathermap-json-data
