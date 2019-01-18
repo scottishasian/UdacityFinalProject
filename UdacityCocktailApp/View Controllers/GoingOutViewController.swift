@@ -17,8 +17,8 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager = CLLocationManager()
     var userLocation: CLLocation!
-    var currentWeatherLabel: String = ""
-    var currentTempLabel: String = ""
+    var apiKey = "7f5cf61e2a9e2510653f76d1061015b6"
+    let openWeatherMapBaseURL = "http://api.openweathermap.org/data/2.5/weather"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,7 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         locationManager.startMonitoringSignificantLocationChanges()
         loadWeatherData()
+
     }
     
     func displayWeatherIcon() {
@@ -48,17 +49,7 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
                     } else if let country = placemarks?.first?.country, let city = placemarks?.first?.locality {
                         print(country)
                         print(city)
-                        
-                        let dataClient = DataClientWeather()
-                        dataClient.getWeatherData(city: city)
-                        self.currentWeatherLabel = dataClient.currentWeather
-                        self.currentTempLabel = dataClient.currentTemperature
-                        
-                        performUIUpdatesOnMain {
-                            self.weatherLabel.text = self.currentWeatherLabel
-                            self.temperatureLabel.text = self.currentTempLabel
-                        }
-                        print(self.currentWeatherLabel)
+                        self.getWeatherData(city: city)
                     }
                 })
                 break
@@ -67,5 +58,34 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
                 break
             }
         }
+    }
+    
+    
+    func getWeatherData(city: String) {
+        let session = URLSession.shared
+        let weatherRequest = URL(string: "\(openWeatherMapBaseURL)?APPID=\(apiKey)&q=\(city)")
+        
+        let dataTask = session.dataTask(with: weatherRequest!) {
+            (data, response, error) in
+            
+            if let error = error {
+                print("\(error)")
+            }
+            else {
+                do {
+                    let weather: [String : AnyObject] = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String : AnyObject]
+                    performUIUpdatesOnMain {
+                        self.weatherLabel.text = "The city is \(weather["name"]!) and the temperature is \(weather["main"]!["temp"] as! Double - 273.14) C."
+                        self.temperatureLabel.text = "\(weather["main"]!["temp"] as! Double - 273.14) C."
+                    }
+                    
+                    
+                }
+                catch let jsonError as NSError {
+                    print("JSON error: \(jsonError.description)")
+                }
+            }
+        }
+        dataTask.resume()
     }
 }

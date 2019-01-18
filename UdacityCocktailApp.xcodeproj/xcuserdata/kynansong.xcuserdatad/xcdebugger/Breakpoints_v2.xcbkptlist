@@ -105,13 +105,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "UdacityCocktailApp/View Controllers/GoingOutViewController.swift"
-            timestampString = "569528610.954656"
+            filePath = "UdacityCocktailApp/Networking/DataClientWeather.swift"
+            timestampString = "569531140.35492"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "loadWeatherData()"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "getWeatherData(city:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
