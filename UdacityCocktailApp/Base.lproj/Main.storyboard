@@ -436,6 +436,9 @@
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="G45-mq-wsz" secondAttribute="bottom" id="JSh-F3-XNe"/>
+                                    <constraint firstAttribute="trailing" secondItem="G45-mq-wsz" secondAttribute="trailing" id="U5s-Bx-pzA"/>
+                                    <constraint firstItem="G45-mq-wsz" firstAttribute="leading" secondItem="aE0-9Y-ffM" secondAttribute="trailing" id="dV1-RE-rOy"/>
                                     <constraint firstItem="aE0-9Y-ffM" firstAttribute="centerX" secondItem="sKa-5U-6ac" secondAttribute="centerX" id="dd3-YQ-BDP"/>
                                 </constraints>
                             </stackView>

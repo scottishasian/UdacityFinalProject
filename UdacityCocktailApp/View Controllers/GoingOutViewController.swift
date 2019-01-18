@@ -18,8 +18,8 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager = CLLocationManager()
     var userLocation: CLLocation!
-    var apiKey = "7f5cf61e2a9e2510653f76d1061015b6"
-    let openWeatherMapBaseURL = "http://api.openweathermap.org/data/2.5/weather"
+    var apiKey = Constants.OpenWeather.weatherAPIKey
+    let openWeatherMapBaseURL = Constants.OpenWeather.weatherBaseURL
 
     override func viewDidLoad() {
         super.viewDidLoad()
