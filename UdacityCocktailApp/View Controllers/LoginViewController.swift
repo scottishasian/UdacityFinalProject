@@ -15,6 +15,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var PasswordTextField: UITextField!
     @IBOutlet weak var LoginButton: UIButton!
     @IBOutlet weak var LoadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var offlineLogIn: UIButton!
     
     let defaults = UserDefaults.standard
     
@@ -23,6 +24,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         UserNameTextField.delegate = self
         PasswordTextField.delegate = self
         LoadingIndicator.isHidden = true
+        offlineLogIn.isHidden = true
         
         UserNameTextField.text = defaults.string(forKey: "username")
     }

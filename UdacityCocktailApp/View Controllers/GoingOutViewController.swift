@@ -14,6 +14,7 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var weatherView: UIImageView!
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
     
     var locationManager: CLLocationManager = CLLocationManager()
     var userLocation: CLLocation!
@@ -27,8 +28,8 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         locationManager.startMonitoringSignificantLocationChanges()
+        loadingSpinner.startAnimating()
         loadWeatherData()
-
     }
     
     func loadWeatherData() {
@@ -46,6 +47,8 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
                         print(country)
                         print(city)
                         self.getWeatherData(city: city)
+                        self.loadingSpinner.stopAnimating()
+                        self.loadingSpinner.isHidden = true
                     }
                 })
                 break
@@ -76,6 +79,7 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
                         let labelText = String(format: "%.2f", temp)
                         self.temperatureLabel.text = "Temperature: \(labelText) °C"
                         self.displayWeatherIcon(temperature: temp)
+                       
                     }
 
                 }
