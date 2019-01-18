@@ -12,11 +12,13 @@ import CoreLocation
 class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var weatherView: UIImageView!
-    @IBOutlet weak var decisionLabel: UILabel!
+    @IBOutlet weak var weatherLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
     
     var locationManager: CLLocationManager = CLLocationManager()
     var userLocation: CLLocation!
     var currentWeatherLabel: String = ""
+    var currentTempLabel: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +28,10 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         locationManager.startMonitoringSignificantLocationChanges()
         loadWeatherData()
-        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        decisionLabel.text = currentWeatherLabel
+    func displayWeatherIcon() {
+        
     }
     
     func loadWeatherData() {
@@ -51,6 +52,13 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
                         let dataClient = DataClientWeather()
                         dataClient.getWeatherData(city: city)
                         self.currentWeatherLabel = dataClient.currentWeather
+                        self.currentTempLabel = dataClient.currentTemperature
+                        
+                        performUIUpdatesOnMain {
+                            self.weatherLabel.text = self.currentWeatherLabel
+                            self.temperatureLabel.text = self.currentTempLabel
+                        }
+                        print(self.currentWeatherLabel)
                     }
                 })
                 break
