@@ -24,3 +24,7 @@ ingredients they will need and their measurements.
 ### Future experimentation:
 * See if CoreML can be tinkered with to differentiate classic cocktails.
 
+### Assets:
+* https://thenounproject.com/term/bar/367999/
+* https://www.flaticon.com/free-icon/rain_1200413
+
