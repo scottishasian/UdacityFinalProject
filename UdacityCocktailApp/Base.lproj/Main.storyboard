@@ -89,6 +89,14 @@
                                     <constraint firstItem="RHu-h5-1eL" firstAttribute="top" secondItem="ERW-Sc-FHm" secondAttribute="bottom" constant="14" id="oEE-Gi-oax"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zda-q3-ETS">
+                                <rect key="frame" x="298" y="637" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Offline test"/>
+                                <connections>
+                                    <action selector="offlineTestButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RcJ-to-mea"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -278,25 +286,25 @@
                                 <rect key="frame" x="109" y="151" width="157" height="181"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write name here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="met-oE-v89">
-                                        <rect key="frame" x="0.0" y="0.0" width="157" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="157" height="91"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write ingredient here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h32-FP-4CY">
-                                        <rect key="frame" x="0.0" y="30" width="157" height="30"/>
+                                        <rect key="frame" x="0.0" y="91" width="157" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write ingredient here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Cx-pX-RYM">
-                                        <rect key="frame" x="0.0" y="60" width="157" height="30"/>
+                                        <rect key="frame" x="0.0" y="121" width="157" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write ingredient here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ti1-cc-u6x">
-                                        <rect key="frame" x="0.0" y="90" width="157" height="91"/>
+                                        <rect key="frame" x="0.0" y="151" width="157" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -402,7 +410,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPq-yG-9tl">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPq-yG-9tl">
                                         <rect key="frame" x="0.0" y="150.5" width="188" height="53"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="165" id="20h-Hg-Eps"/>
@@ -414,24 +422,41 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6OV-hu-FZ8">
+                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6OV-hu-FZ8">
                                 <rect key="frame" x="32" y="466" width="134" height="65"/>
+                                <color key="backgroundColor" red="0.044434541260000002" green="0.015013412150000001" blue="0.10532707249999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="sM8-IW-pVV"/>
-                                    <constraint firstAttribute="width" constant="134" id="vK0-TZ-a3e"/>
+                                    <constraint firstAttribute="width" constant="134" id="yrB-p1-FI5"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="17"/>
                                 <state key="normal" title="Recommended Spirits"/>
                                 <connections>
                                     <action selector="findSpirits:" destination="HEK-CE-YpS" eventType="touchUpInside" id="zV2-9p-Do0"/>
                                     <segue destination="tlm-Q3-AKC" kind="show" id="Kq1-FX-7Ss"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="G45-mq-wsz">
-                                <rect key="frame" x="240" y="478" width="103" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aE0-9Y-ffM">
+                                <rect key="frame" x="122" y="580" width="131" height="34"/>
+                                <color key="backgroundColor" red="0.0086828044040000007" green="0.0086828044040000007" blue="0.0086828044040000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="103" id="Dgm-C0-m0M"/>
-                                    <constraint firstAttribute="height" constant="40" id="Ete-hP-CEH"/>
+                                    <constraint firstAttribute="height" constant="34" id="e1n-UF-ar3"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="17"/>
+                                <state key="normal" title="Should I go out?"/>
+                                <connections>
+                                    <action selector="shouldIGoOut:" destination="HEK-CE-YpS" eventType="touchUpInside" id="HOR-7O-KQ4"/>
+                                    <segue destination="xtX-LA-eog" kind="show" id="zJh-sg-1aG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="G45-mq-wsz">
+                                <rect key="frame" x="209" y="466" width="134" height="65"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="Ete-hP-CEH"/>
+                                    <constraint firstAttribute="width" constant="134" id="UGy-ub-uDo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Didot-Bold" family="Didot" pointSize="17"/>
                                 <state key="normal" title="Where can I find this?"/>
                                 <connections>
                                     <action selector="findBar:" destination="HEK-CE-YpS" eventType="touchUpInside" id="47e-2G-XvV"/>
@@ -443,11 +468,15 @@
                         <constraints>
                             <constraint firstItem="6OV-hu-FZ8" firstAttribute="top" secondItem="X1R-pU-Oqr" secondAttribute="bottom" constant="86.5" id="27g-Zt-WsT"/>
                             <constraint firstItem="X1R-pU-Oqr" firstAttribute="top" secondItem="kMb-XT-Jpq" secondAttribute="top" constant="112" id="2bA-ok-p5Y"/>
-                            <constraint firstItem="G45-mq-wsz" firstAttribute="leading" secondItem="6OV-hu-FZ8" secondAttribute="trailing" constant="74" id="5Ld-tW-Uai"/>
-                            <constraint firstItem="G45-mq-wsz" firstAttribute="top" secondItem="X1R-pU-Oqr" secondAttribute="bottom" constant="98.5" id="Hl3-dk-YVV"/>
+                            <constraint firstItem="G45-mq-wsz" firstAttribute="leading" secondItem="6OV-hu-FZ8" secondAttribute="trailing" constant="43" id="5Ld-tW-Uai"/>
+                            <constraint firstItem="kMb-XT-Jpq" firstAttribute="bottom" secondItem="aE0-9Y-ffM" secondAttribute="bottom" constant="53" id="74K-gT-l2K"/>
+                            <constraint firstItem="G45-mq-wsz" firstAttribute="leading" secondItem="6OV-hu-FZ8" secondAttribute="trailing" constant="43" id="Ge8-pU-cGo"/>
+                            <constraint firstItem="G45-mq-wsz" firstAttribute="top" secondItem="X1R-pU-Oqr" secondAttribute="bottom" constant="86.5" id="Hl3-dk-YVV"/>
                             <constraint firstItem="X1R-pU-Oqr" firstAttribute="centerX" secondItem="nIL-il-d8i" secondAttribute="centerX" id="WzF-9C-egs"/>
                             <constraint firstItem="6OV-hu-FZ8" firstAttribute="leading" secondItem="kMb-XT-Jpq" secondAttribute="leading" constant="32" id="bFD-MR-ESz"/>
                             <constraint firstItem="kMb-XT-Jpq" firstAttribute="trailing" secondItem="X1R-pU-Oqr" secondAttribute="trailing" constant="94" id="ba7-ul-Rfn"/>
+                            <constraint firstItem="aE0-9Y-ffM" firstAttribute="centerX" secondItem="nIL-il-d8i" secondAttribute="centerX" id="cEh-yr-QaS"/>
+                            <constraint firstItem="aE0-9Y-ffM" firstAttribute="top" secondItem="6OV-hu-FZ8" secondAttribute="bottom" constant="49" id="jxq-eu-zIo"/>
                             <constraint firstItem="kMb-XT-Jpq" firstAttribute="trailing" secondItem="G45-mq-wsz" secondAttribute="trailing" constant="32" id="k9i-pN-e8S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kMb-XT-Jpq"/>
@@ -463,6 +492,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sKb-Oj-6sH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3786.4000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Going Out View Controller-->
+        <scene sceneID="LmR-of-Euy">
+            <objects>
+                <viewController id="xtX-LA-eog" customClass="GoingOutViewController" customModule="UdacityCocktailApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ihI-Vf-I0Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x2t-Pv-qw7">
+                                <rect key="frame" x="67" y="138" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8B-Y8-XQ3">
+                                <rect key="frame" x="137" y="325" width="100" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6KS-wD-4AD"/>
+                    </view>
+                    <connections>
+                        <outlet property="decisionLabel" destination="e8B-Y8-XQ3" id="bZB-NK-1hW"/>
+                        <outlet property="weatherView" destination="x2t-Pv-qw7" id="wWL-ev-NAl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uY2-ic-wal" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3712.8000000000002" y="956.67166416791611"/>
         </scene>
         <!--Spirits Table View Controller-->
         <scene sceneID="ikw-Nx-EHT">

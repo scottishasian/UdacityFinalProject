@@ -56,6 +56,7 @@ class CocktailTableViewController: UIViewController {
         
         let referencePredicate = NSPredicate(format: "ingredientReference == %@", ingredientsReference!)
         allCocktails = (try! DataManager.sharedInstance().context.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>)) as! [Cocktail]
+        print("The ingredient reference is \(ingredientsReference)")
     
         for cocktail in allCocktails {
             let filteredCocktails = cocktail.ingredientReference?.filtered(using: referencePredicate)
@@ -116,7 +117,5 @@ extension CocktailTableViewController: UITableViewDelegate, UITableViewDataSourc
             viewController.sentMeasurements = cocktailMeasurementsToPass
         }
     }
-
-
 }
 

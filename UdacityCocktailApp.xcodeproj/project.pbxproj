@@ -36,6 +36,7 @@
 		2406F3AA21E2426300857B58 /* SpiritsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F3A921E2426300857B58 /* SpiritsTableViewController.swift */; };
 		2406F3AD21E2428D00857B58 /* SpiritsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F3AC21E2428D00857B58 /* SpiritsTableCell.swift */; };
 		2406F3AF21E2432000857B58 /* CocktailsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2406F3AE21E2432000857B58 /* CocktailsTableCell.swift */; };
+		2414AF1821F1CF4E0099EA04 /* GoingOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2414AF1721F1CF4E0099EA04 /* GoingOutViewController.swift */; };
 		2417124021E254B300208E7B /* AddCocktailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2417123F21E254B300208E7B /* AddCocktailViewController.swift */; };
 		2417124221E2588900208E7B /* General+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2417124121E2588900208E7B /* General+Extentions.swift */; };
 		2417124421E258CA00208E7B /* AddCocktail+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2417124321E258CA00208E7B /* AddCocktail+Extensions.swift */; };
@@ -76,6 +77,7 @@
 		2406F3A921E2426300857B58 /* SpiritsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritsTableViewController.swift; sourceTree = "<group>"; };
 		2406F3AC21E2428D00857B58 /* SpiritsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritsTableCell.swift; sourceTree = "<group>"; };
 		2406F3AE21E2432000857B58 /* CocktailsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsTableCell.swift; sourceTree = "<group>"; };
+		2414AF1721F1CF4E0099EA04 /* GoingOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoingOutViewController.swift; sourceTree = "<group>"; };
 		2417123F21E254B300208E7B /* AddCocktailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCocktailViewController.swift; sourceTree = "<group>"; };
 		2417124121E2588900208E7B /* General+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "General+Extentions.swift"; sourceTree = "<group>"; };
 		2417124321E258CA00208E7B /* AddCocktail+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddCocktail+Extensions.swift"; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				2406F3A321E2411500857B58 /* BarLocationViewController.swift */,
 				2406F3A921E2426300857B58 /* SpiritsTableViewController.swift */,
 				2417123F21E254B300208E7B /* AddCocktailViewController.swift */,
+				2414AF1721F1CF4E0099EA04 /* GoingOutViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				2406F3A621E2416800857B58 /* DataManager.swift in Sources */,
 				2406F38921E22E7600857B58 /* DataResponse.swift in Sources */,
 				2406F38421E22DD300857B58 /* User.swift in Sources */,
+				2414AF1821F1CF4E0099EA04 /* GoingOutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

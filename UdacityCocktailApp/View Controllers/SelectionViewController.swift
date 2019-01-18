@@ -15,8 +15,6 @@ class SelectionViewController: UIViewController {
     @IBOutlet weak var ingredientsTableView: UITableView!
     
     var fetchResultController : NSFetchedResultsController<Ingredients>!
-    //var ingredientsData = [Ingredients]()
-    var ingredientsList = ["Rum", "Tequila", "Whisky", "Vodka"]
     var ingredientReferenceToPass: NSSet = []
     var arrayCount : [Ingredients]!
     
@@ -25,8 +23,6 @@ class SelectionViewController: UIViewController {
         ingredientsTableView.dataSource = self
         ingredientsTableView.delegate = self
         ingredientsTableView.isHidden = true
-//        DataManager.sharedInstance().seedIngredients()
-//        DataManager.sharedInstance().seedCocktails()
         checkIfFirstLaunch()
         fetchIngredientsList()
         arrayCount = fetchResultController.fetchedObjects
@@ -53,8 +49,8 @@ class SelectionViewController: UIViewController {
         } else {
             print("This is the first launch ever!")
             UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
-            UserDefaults.standard.set(false, forKey: "hasDataInTableIngredients")
-            UserDefaults.standard.set(false, forKey: "hasDataInTableCocktails")
+            UserDefaults.standard.set(true, forKey: "hasDataInTableIngredients")
+            UserDefaults.standard.set(true, forKey: "hasDataInTableCocktails")
             DataManager.sharedInstance().seedIngredients()
             DataManager.sharedInstance().seedCocktails()
             saveData()
@@ -65,7 +61,6 @@ class SelectionViewController: UIViewController {
     @IBAction func dropDownTapped(_ sender: Any) {
         let toggle = ingredientsTableView.isHidden
         animateDropDown(toggle: toggle)
-        //DataManager.sharedInstance().printIngredients()
         ingredientsTableView.reloadData()
 
     }
@@ -84,7 +79,6 @@ class SelectionViewController: UIViewController {
     
     func fetchIngredientsList() {
         
-        //let fetchRequest = NSFetchRequest<Ingredients>(entityName: "Ingredients")
         let fetchRequest: NSFetchRequest<Ingredients> = Ingredients.fetchRequest()
         let primarySortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [primarySortDescriptor]
@@ -108,7 +102,6 @@ class SelectionViewController: UIViewController {
 
 extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayCount!.count
     }
@@ -124,17 +117,17 @@ extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = ingredientsTableView.cellForRow(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
         let ingredient = fetchResultController.object(at: indexPath)
-        //ingredientReferenceToPass = ingredient.reference!
+        ingredientReferenceToPass = ingredient.reference!
         print("tapped: \(ingredient.name)")
         performSegue(withIdentifier: "cocktailListSegue", sender: cell)
     }
     
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if(segue.identifier == "cocktailListSegue") {
-                let viewController = segue.destination as! CocktailTableViewController
-                viewController.ingredientsReference = ingredientReferenceToPass
-            }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "cocktailListSegue") {
+            let viewController = segue.destination as! CocktailTableViewController
+            viewController.ingredientsReference = ingredientReferenceToPass
         }
+    }
 }
 
 

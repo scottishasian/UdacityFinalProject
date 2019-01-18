@@ -66,6 +66,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         openLink(Constants.Udacity.SignUp)
     }
     
+    @IBAction func offlineTestButton(_ sender: Any) {
+        let controller = self.storyboard!.instantiateViewController(withIdentifier: "AppEntranceController") as! UINavigationController
+        self.present(controller, animated: true, completion: nil)
+    }
+    
     private func logUserIn(userName : String, password : String) {
         DataClient.sharedInstance().authenticateUser(username: userName, password: password) {(success, error) in
             if success {

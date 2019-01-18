@@ -19,7 +19,6 @@ class AddCocktailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var measurementsTextField: UITextView!
     @IBOutlet weak var cocktailInformationTextField: UITextView!
     
-
     //https://cocoacasts.com/implement-the-nsfetchedresultscontrollerdelegate-protocol-with-swift-3
     
     override func viewDidLoad() {
@@ -30,6 +29,16 @@ class AddCocktailViewController: UIViewController, UITextFieldDelegate {
         self.ingredient3.delegate = self
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        subscribeToKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        unsubscribeToKeyboardNotifications()
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
@@ -54,8 +63,12 @@ class AddCocktailViewController: UIViewController, UITextFieldDelegate {
         newCocktail.measurments = measurements
         newCocktail.information = information
         
-        saveData() 
+        saveData()
+        showInfo(withMessage: "Cocktail Saved")
+        
         // TODO: Check if cocktail name is already in database.
+        // TODO: Error handling.
+        // TODO: redirect when successful.
         
     }
     
