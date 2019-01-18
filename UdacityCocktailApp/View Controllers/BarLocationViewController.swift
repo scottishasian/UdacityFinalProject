@@ -16,7 +16,7 @@ class BarLocationViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        showInfo(withMessage: "Under construction")
         // Do any additional setup after loading the view.
     }
 

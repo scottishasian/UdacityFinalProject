@@ -460,7 +460,7 @@
                                 <state key="normal" title="Where can I find this?"/>
                                 <connections>
                                     <action selector="findBar:" destination="HEK-CE-YpS" eventType="touchUpInside" id="47e-2G-XvV"/>
-                                    <segue destination="V5Q-hq-W5X" kind="presentation" id="3OI-vx-yLd"/>
+                                    <segue destination="V5Q-hq-W5X" kind="show" id="3OI-vx-yLd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -570,14 +570,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8ee-da-InK">
-                                <rect key="frame" x="0.0" y="80" width="375" height="587"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8ee-da-InK" firstAttribute="top" secondItem="aU1-Db-KkS" secondAttribute="top" constant="60" id="dfK-Gd-RNG"/>
                             <constraint firstItem="8ee-da-InK" firstAttribute="bottom" secondItem="aU1-Db-KkS" secondAttribute="bottom" id="fkH-gS-Fvd"/>
                             <constraint firstItem="8ee-da-InK" firstAttribute="trailing" secondItem="aU1-Db-KkS" secondAttribute="trailing" id="itH-0c-hYf"/>
+                            <constraint firstItem="8ee-da-InK" firstAttribute="top" secondItem="aU1-Db-KkS" secondAttribute="top" id="nKf-uc-hAT"/>
                             <constraint firstItem="8ee-da-InK" firstAttribute="leading" secondItem="aU1-Db-KkS" secondAttribute="leading" id="x9X-aj-a92"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aU1-Db-KkS"/>
