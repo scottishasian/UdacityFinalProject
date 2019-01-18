@@ -16,7 +16,7 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager = CLLocationManager()
     var userLocation: CLLocation!
-    var currentWeather: String = ""
+    var currentWeatherLabel: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        decisionLabel.text = currentWeather
+        decisionLabel.text = currentWeatherLabel
     }
     
     func loadWeatherData() {
@@ -50,6 +50,7 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
                         
                         let dataClient = DataClientWeather()
                         dataClient.getWeatherData(city: city)
+                        self.currentWeatherLabel = dataClient.currentWeather
                     }
                 })
                 break
