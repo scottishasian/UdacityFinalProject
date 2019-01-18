@@ -42,6 +42,7 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
                 let location = CLLocation(latitude: lat!, longitude: long!)
                 CLGeocoder().reverseGeocodeLocation(location, completionHandler: { (placemarks, error) in
                     if error != nil {
+                        self.showInfo(withMessage: "\(error)")
                         return
                     } else if let country = placemarks?.first?.country, let city = placemarks?.first?.locality {
                         print(country)
@@ -68,7 +69,7 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
             (data, response, error) in
             
             if let error = error {
-                print("\(error)")
+                debugPrint("\(error)")
             }
             else {
                 do {

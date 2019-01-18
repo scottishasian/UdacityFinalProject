@@ -124,7 +124,7 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
-        <!--Choose your ingredients-->
+        <!--Ingredients-->
         <scene sceneID="rlR-cp-hAu">
             <objects>
                 <viewController id="K6s-Wo-GUc" customClass="SelectionViewController" customModule="UdacityCocktailApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -211,7 +211,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nxk-2O-UrJ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Choose your ingredients" id="pVG-gl-QfZ">
+                    <navigationItem key="navigationItem" title="Ingredients" id="pVG-gl-QfZ">
                         <barButtonItem key="leftBarButtonItem" image="icon_addpin" id="QBM-Oe-u1g">
                             <connections>
                                 <segue destination="HGk-Jk-Zwb" kind="show" id="b5n-y1-QHj"/>

@@ -16,7 +16,7 @@ class SelectionViewController: UIViewController {
     
     var fetchResultController : NSFetchedResultsController<Ingredients>!
     var ingredientReferenceToPass: NSSet = []
-    var arrayCount : [Ingredients]!
+    var ingredientsArray : [Ingredients]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class SelectionViewController: UIViewController {
         ingredientsTableView.isHidden = true
         checkIfFirstLaunch()
         fetchIngredientsList()
-        arrayCount = fetchResultController.fetchedObjects
+        ingredientsArray = fetchResultController.fetchedObjects
         UserDefaults.standard.set(true, forKey: "hasDataInTableIngredients")
         UserDefaults.standard.set(true, forKey: "hasDataInTableCocktails")
     }
@@ -113,7 +113,7 @@ class SelectionViewController: UIViewController {
 extension SelectionViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayCount!.count
+        return ingredientsArray!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
