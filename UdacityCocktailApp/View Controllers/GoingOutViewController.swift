@@ -23,7 +23,12 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getWeatherData(city: "Edinburgh")
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        locationManager.startMonitoringSignificantLocationChanges()
+        loadWeatherData()
         
     }
     
@@ -31,6 +36,32 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
         decisionLabel.text = currentWeather
     }
     
+    func loadWeatherData() {
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+            case .authorizedAlways, .authorizedWhenInUse:
+                print("Authorized.")
+                let lat = locationManager.location?.coordinate.latitude
+                let long = locationManager.location?.coordinate.longitude
+                let location = CLLocation(latitude: lat!, longitude: long!)
+                CLGeocoder().reverseGeocodeLocation(location, completionHandler: { (placemarks, error) in
+                    if error != nil {
+                        return
+                    } else if let country = placemarks?.first?.country, let city = placemarks?.first?.locality {
+                        print(country)
+                        print(city)
+                        
+                        
+                        self.getWeatherData(city: city)
+                    }
+                })
+                break
+            case .notDetermined, .restricted, .denied:
+                print("Error: Either Not Determined, Restricted, or Denied. ")
+                break
+            }
+        }
+    }
     
     func getWeatherData(city: String) {
         let session = URLSession.shared
@@ -43,13 +74,13 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
                 print("\(error)")
             }
             else {
-                let dataString = String(data: data!, encoding: String.Encoding.utf8)
-                print("The weather in Edinburgh is: \(data) + \(dataString)")
+//                let dataString = String(data: data!, encoding: String.Encoding.utf8)
+//                print("The weather in Edinburgh is: \(data) + \(dataString)")
                 
                 do {
                     let weather: [String : AnyObject] = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String : AnyObject]
-                    //self.currentWeather = "Weather data for \(weather["name"]!)"
-                    print("Weather data for \((weather["weather"]![0]! as! [String: AnyObject])["main"]!)")
+                        print("\(weather["name"] as? String)")
+                    self.currentWeather = weather["name"] as! String
                 }
                 catch let jsonError as NSError {
                     print("JSON error: \(jsonError.description)")
