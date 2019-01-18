@@ -21,3 +21,6 @@ ingredients they will need and their measurements.
 * To show suggested brands and provide links to their websites.
 * To use mapKit to show where a user can find these cocktails.
 
+### Future experimentation:
+* See if CoreML can be tinkered with to differentiate classic cocktails.
+
