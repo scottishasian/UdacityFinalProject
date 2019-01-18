@@ -31,10 +31,6 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
 
     }
     
-    func displayWeatherIcon() {
-        
-    }
-    
     func loadWeatherData() {
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
@@ -75,11 +71,13 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
                 do {
                     let weather: [String : AnyObject] = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String : AnyObject]
                     performUIUpdatesOnMain {
-                        self.weatherLabel.text = "The city is \(weather["name"]!) and the temperature is \(weather["main"]!["temp"] as! Double - 273.14) C."
-                        self.temperatureLabel.text = "\(weather["main"]!["temp"] as! Double - 273.14) C."
+                        self.weatherLabel.text = "You are in \(weather["name"]!)"
+                        let temp = (weather["main"]!["temp"] as! Double - 273.14)
+                        let labelText = String(format: "%.2f", temp)
+                        self.temperatureLabel.text = "Temperature: \(labelText) °C"
+                        self.displayWeatherIcon(temperature: temp)
                     }
-                    
-                    
+
                 }
                 catch let jsonError as NSError {
                     print("JSON error: \(jsonError.description)")
@@ -87,5 +85,18 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
         dataTask.resume()
+    }
+    
+    //https://www.flaticon.com/free-icon/snowflake_1200430
+    
+    func displayWeatherIcon(temperature: Double) {
+        if temperature <= 10 {
+            weatherView.image = UIImage(named: "snowflake")
+        } else if temperature >= 10 && temperature <= 20 {
+            weatherView.image = UIImage(named: "sun")
+        } else {
+            weatherView.image = UIImage(named: "sunny")
+        }
+        
     }
 }
