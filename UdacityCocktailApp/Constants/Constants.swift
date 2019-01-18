@@ -69,4 +69,8 @@ struct Constants {
         let key: String
     }
     
+    struct OpenWeather {
+        static let weatherAPIKey = "7f5cf61e2a9e2510653f76d1061015b6"
+    }
+    
 }

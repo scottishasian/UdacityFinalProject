@@ -40,6 +40,7 @@ class CocktailInformationViewController: UIViewController {
     
     //Add weather API and "should I go out" page?
     //https://stackoverflow.com/questions/35753949/swift-how-to-get-openweathermap-json-data
+    //https://www.youtube.com/watch?v=r-LZs0De7_U
     @IBAction func shouldIGoOut(_ sender: Any) {
     }
     

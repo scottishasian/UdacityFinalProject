@@ -20,20 +20,26 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        getWeatherData(urlString: "api.openweathermap.org/data/2.5/weather?q=Edinburgh")
     }
 
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func getWeatherData(urlString: String) {
+        let url = URL(string: urlString)
+        let request = URLRequest(url: url!)
         
-        let currentLocation: AnyObject = locations[locations.count - 1]
+        let task = URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            
+//            DispatchQueue.async(DispatchQueue.main(), {
+//                self.setLabel(weatherData: data as! NSData)
+//            })
+            
+        }
         
-        let latitude = currentLocation.coordinate.latitude
-        let longitude = currentLocation.coordinate.longitude
-        let appID = 2141424 //TODO
+    }
+    
+    func setLabel(weatherData: NSData) {
         
-        let urlPath = "http://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=\(appID)"
-        let url = NSURL(string: urlPath)
     }
 
 }
