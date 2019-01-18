@@ -64,6 +64,16 @@ class SelectionViewController: UIViewController {
         ingredientsTableView.reloadData()
 
     }
+
+    @IBAction func logOut(_ sender: Any) {
+        DataClient.sharedInstance().logoutUser { (success, error) in
+            if success {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                self.showInfo(withTitle: "Log Out Error", withMessage: (error?.localizedDescription)!)
+            }
+        }
+    }
     
     func animateDropDown(toggle: Bool) {
         if toggle {

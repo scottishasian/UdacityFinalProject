@@ -217,6 +217,11 @@
                                 <segue destination="HGk-Jk-Zwb" kind="show" id="b5n-y1-QHj"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="VRM-li-juP">
+                            <connections>
+                                <action selector="logOut:" destination="K6s-Wo-GUc" id="DUO-aB-ZvH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="ingredientsButton" destination="Uz1-ab-Kbm" id="Pug-aC-7io"/>
