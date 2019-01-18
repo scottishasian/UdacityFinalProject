@@ -41,6 +41,7 @@
 		2417124221E2588900208E7B /* General+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2417124121E2588900208E7B /* General+Extentions.swift */; };
 		2417124421E258CA00208E7B /* AddCocktail+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2417124321E258CA00208E7B /* AddCocktail+Extensions.swift */; };
 		241A973221EB7ADC00F67689 /* CocktailTable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241A973121EB7ADC00F67689 /* CocktailTable+Extensions.swift */; };
+		2425181121F2271900DF39C2 /* DataClientWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2425181021F2271900DF39C2 /* DataClientWeather.swift */; };
 		ED547E2B21E5EF3D00EC16EA /* DataManager_SeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED547E2A21E5EF3D00EC16EA /* DataManager_SeedData.swift */; };
 		EDE9AA5621E79B8700FDC8C8 /* SelectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9AA5521E79B8700FDC8C8 /* SelectionView+Extension.swift */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		2417124121E2588900208E7B /* General+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "General+Extentions.swift"; sourceTree = "<group>"; };
 		2417124321E258CA00208E7B /* AddCocktail+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddCocktail+Extensions.swift"; sourceTree = "<group>"; };
 		241A973121EB7ADC00F67689 /* CocktailTable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CocktailTable+Extensions.swift"; sourceTree = "<group>"; };
+		2425181021F2271900DF39C2 /* DataClientWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClientWeather.swift; sourceTree = "<group>"; };
 		ED547E2A21E5EF3D00EC16EA /* DataManager_SeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager_SeedData.swift; sourceTree = "<group>"; };
 		EDE9AA5521E79B8700FDC8C8 /* SelectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectionView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,6 +157,7 @@
 			children = (
 				2406F37721E22CD500857B58 /* Convenience.swift */,
 				2406F37621E22CD500857B58 /* DataClient.swift */,
+				2425181021F2271900DF39C2 /* DataClientWeather.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				2406F38921E22E7600857B58 /* DataResponse.swift in Sources */,
 				2406F38421E22DD300857B58 /* User.swift in Sources */,
 				2414AF1821F1CF4E0099EA04 /* GoingOutViewController.swift in Sources */,
+				2425181121F2271900DF39C2 /* DataClientWeather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
