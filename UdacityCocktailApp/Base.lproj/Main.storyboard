@@ -350,7 +350,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHo-vw-e9M">
-                                <rect key="frame" x="141" y="573" width="93" height="30"/>
+                                <rect key="frame" x="115" y="573" width="145" height="30"/>
                                 <state key="normal" title="Save Cocktail"/>
                                 <connections>
                                     <action selector="saveCocktail:" destination="HGk-Jk-Zwb" eventType="touchUpInside" id="Smk-lZ-x4y"/>
@@ -362,17 +362,18 @@
                             <constraint firstItem="JcJ-fT-C37" firstAttribute="trailing" secondItem="wfD-o4-sAG" secondAttribute="trailing" constant="52" id="9ft-zP-Bvt"/>
                             <constraint firstItem="JcJ-fT-C37" firstAttribute="bottom" secondItem="qHo-vw-e9M" secondAttribute="bottom" constant="64" id="AJ6-54-Uuu"/>
                             <constraint firstItem="zm9-XC-dzF" firstAttribute="top" secondItem="wfD-o4-sAG" secondAttribute="bottom" constant="23" id="Ffp-Tt-Ehp"/>
-                            <constraint firstItem="qHo-vw-e9M" firstAttribute="leading" secondItem="JcJ-fT-C37" secondAttribute="leading" constant="141" id="K7P-zS-l33"/>
                             <constraint firstItem="Wbq-aB-Hmh" firstAttribute="leading" secondItem="JcJ-fT-C37" secondAttribute="leading" constant="51" id="O1k-2g-eLe"/>
+                            <constraint firstItem="JcJ-fT-C37" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="qHo-vw-e9M" secondAttribute="trailing" constant="115" id="XvM-Ey-vBL"/>
                             <constraint firstItem="wfD-o4-sAG" firstAttribute="leading" secondItem="JcJ-fT-C37" secondAttribute="leading" constant="51" id="Y24-dL-0lg"/>
                             <constraint firstItem="qHo-vw-e9M" firstAttribute="top" secondItem="Wbq-aB-Hmh" secondAttribute="bottom" constant="38" id="cpA-Ve-dN8"/>
                             <constraint firstItem="JcJ-fT-C37" firstAttribute="trailing" secondItem="Wbq-aB-Hmh" secondAttribute="trailing" constant="52" id="kcs-gA-XQr"/>
-                            <constraint firstItem="JcJ-fT-C37" firstAttribute="trailing" secondItem="qHo-vw-e9M" secondAttribute="trailing" constant="141" id="oL4-jJ-z1P"/>
+                            <constraint firstItem="qHo-vw-e9M" firstAttribute="centerX" secondItem="l2l-Pg-znX" secondAttribute="centerX" id="opl-Ag-F9H"/>
                             <constraint firstItem="JcJ-fT-C37" firstAttribute="trailing" secondItem="zm9-XC-dzF" secondAttribute="trailing" constant="109" id="qJB-Vd-Zrl"/>
                             <constraint firstItem="zm9-XC-dzF" firstAttribute="leading" secondItem="JcJ-fT-C37" secondAttribute="leading" constant="109" id="qzF-zv-K02"/>
                             <constraint firstItem="wfD-o4-sAG" firstAttribute="top" secondItem="JcJ-fT-C37" secondAttribute="top" constant="26" id="s7J-EP-99h"/>
                             <constraint firstItem="Wbq-aB-Hmh" firstAttribute="top" secondItem="zm9-XC-dzF" secondAttribute="bottom" constant="33" id="uV7-Sn-CQx"/>
                             <constraint firstItem="JcJ-fT-C37" firstAttribute="bottom" secondItem="Wbq-aB-Hmh" secondAttribute="bottom" constant="132" id="vaw-DX-hig"/>
+                            <constraint firstItem="qHo-vw-e9M" firstAttribute="leading" relation="lessThanOrEqual" secondItem="JcJ-fT-C37" secondAttribute="leading" constant="115" id="wrE-PP-MKk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JcJ-fT-C37"/>
                     </view>
@@ -404,8 +405,8 @@
                                         <rect key="frame" x="0.0" y="0.0" width="108" height="108"/>
                                         <color key="backgroundColor" red="0.92984612944162437" green="0.83414707009993372" blue="0.56801805972118002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="108" id="Or8-J8-i7o"/>
-                                            <constraint firstAttribute="width" constant="108" id="XgK-mM-YPP"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="108" id="Or8-J8-i7o"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="108" id="XgK-mM-YPP"/>
                                         </constraints>
                                         <state key="normal" image="bottles"/>
                                         <connections>
@@ -417,8 +418,8 @@
                                         <rect key="frame" x="108" y="0.0" width="108" height="108"/>
                                         <color key="backgroundColor" red="0.92984612944162437" green="0.83414707009993372" blue="0.56801805972118002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="108" id="kOA-de-u8I"/>
-                                            <constraint firstAttribute="height" constant="108" id="yGF-1f-03N"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="108" id="kOA-de-u8I"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="108" id="yGF-1f-03N"/>
                                         </constraints>
                                         <state key="normal" image="rain"/>
                                         <connections>
@@ -430,8 +431,8 @@
                                         <rect key="frame" x="216" y="0.0" width="108" height="108"/>
                                         <color key="backgroundColor" red="0.92984612944162437" green="0.83414707009993372" blue="0.56801805972118002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="108" id="IYo-EN-su9"/>
-                                            <constraint firstAttribute="height" constant="108" id="vRm-28-P5u"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="108" id="IYo-EN-su9"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="108" id="vRm-28-P5u"/>
                                         </constraints>
                                         <state key="normal" image="barLocation"/>
                                         <connections>
@@ -492,7 +493,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="320" id="ebO-ql-QmQ"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="320" id="ebO-ql-QmQ"/>
                                     <constraint firstAttribute="width" constant="249" id="kiJ-4D-UwD"/>
                                 </constraints>
                             </stackView>
@@ -504,7 +505,7 @@
                             <constraint firstItem="sKa-5U-6ac" firstAttribute="top" secondItem="V2s-iO-1lh" secondAttribute="bottom" constant="24" id="6pH-t9-PuP"/>
                             <constraint firstAttribute="bottom" secondItem="sKa-5U-6ac" secondAttribute="bottom" constant="20" symbolic="YES" id="ZWU-3I-lFR"/>
                             <constraint firstItem="sKa-5U-6ac" firstAttribute="centerX" secondItem="X1R-pU-Oqr" secondAttribute="centerX" id="bWy-h7-gk3"/>
-                            <constraint firstItem="kMb-XT-Jpq" firstAttribute="trailing" secondItem="X1R-pU-Oqr" secondAttribute="trailing" constant="63" id="fBs-90-mKS"/>
+                            <constraint firstItem="kMb-XT-Jpq" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="X1R-pU-Oqr" secondAttribute="trailing" constant="63" id="fBs-90-mKS"/>
                             <constraint firstItem="X1R-pU-Oqr" firstAttribute="top" secondItem="kMb-XT-Jpq" secondAttribute="top" constant="60" id="kgl-8E-Tc1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kMb-XT-Jpq"/>
