@@ -62,8 +62,8 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
     
     func getWeatherData(city: String) {
         let session = URLSession.shared
-        let weatherRequest = URL(string: "\(openWeatherMapBaseURL)?APPID=\(apiKey)&q=\(city)")
-        
+        let weatherLocation = city.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+        let weatherRequest = URL(string: "\(openWeatherMapBaseURL)?APPID=\(apiKey)&q=\(String(describing: weatherLocation))")
         let dataTask = session.dataTask(with: weatherRequest!) {
             (data, response, error) in
             
