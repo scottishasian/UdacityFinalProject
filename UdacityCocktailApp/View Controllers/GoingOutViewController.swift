@@ -36,11 +36,14 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
             case .authorizedAlways, .authorizedWhenInUse:
-                print("Authorized.")
-                let lat = locationManager.location?.coordinate.latitude
-                let long = locationManager.location?.coordinate.longitude
-                let location = CLLocation(latitude: lat!, longitude: long!)
-                CLGeocoder().reverseGeocodeLocation(location, completionHandler: { (placemarks, error) in
+                print("Authorised.")
+                
+                if let lat = locationManager.location?.coordinate.latitude, let long = locationManager.location?.coordinate.longitude {
+                    let location = CLLocation(latitude: lat, longitude: long)
+                    userLocation = location
+                }
+                
+                CLGeocoder().reverseGeocodeLocation(userLocation, completionHandler: { (placemarks, error) in
                     if error != nil {
                         self.showInfo(withMessage: "\(error)")
                         return

@@ -92,6 +92,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
             performUIUpdatesOnMain {
                 self.LoadingIndicator.stopAnimating()
+                self.LoadingIndicator.isHidden = true
             }
         }
     }
