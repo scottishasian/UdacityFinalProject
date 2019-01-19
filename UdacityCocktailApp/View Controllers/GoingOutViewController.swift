@@ -18,43 +18,48 @@ class GoingOutViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager = CLLocationManager()
     var userLocation: CLLocation!
+    var latitude: Double = 0.0
+    var longitude: Double = 0.0
     var apiKey = Constants.OpenWeather.weatherAPIKey
     let openWeatherMapBaseURL = Constants.OpenWeather.weatherBaseURL
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         locationManager.startMonitoringSignificantLocationChanges()
         loadingSpinner.startAnimating()
-        loadWeatherData()
+        locationManager.startUpdatingLocation()
     }
     
-    func loadWeatherData() {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
             case .authorizedAlways, .authorizedWhenInUse:
                 print("Authorised.")
                 
-                if let lat = locationManager.location?.coordinate.latitude, let long = locationManager.location?.coordinate.longitude {
+                if let lat = manager.location?.coordinate.latitude, let long = manager.location?.coordinate.longitude {
                     let location = CLLocation(latitude: lat, longitude: long)
+                    print(location)
                     userLocation = location
+                    
+                    CLGeocoder().reverseGeocodeLocation(userLocation, completionHandler: { (placemarks, error) in
+                        if error != nil {
+                            self.showInfo(withMessage: "\(error)")
+                            return
+                        } else if let country = placemarks?.first?.country, let city = placemarks?.first?.locality {
+                            print(country)
+                            print(city)
+                            self.getWeatherData(city: city)
+                            self.loadingSpinner.stopAnimating()
+                            self.loadingSpinner.isHidden = true
+                        }
+                    })
                 }
                 
-                CLGeocoder().reverseGeocodeLocation(userLocation, completionHandler: { (placemarks, error) in
-                    if error != nil {
-                        self.showInfo(withMessage: "\(error)")
-                        return
-                    } else if let country = placemarks?.first?.country, let city = placemarks?.first?.locality {
-                        print(country)
-                        print(city)
-                        self.getWeatherData(city: city)
-                        self.loadingSpinner.stopAnimating()
-                        self.loadingSpinner.isHidden = true
-                    }
-                })
                 break
             case .notDetermined, .restricted, .denied:
                 print("Error: Either Not Determined, Restricted, or Denied. ")
